@@ -16,6 +16,7 @@ import django_heroku
 import dj_database_url
 import psycopg2
 from dotenv import load_dotenv, find_dotenv, dotenv_values
+
 load_dotenv(find_dotenv(filename="../.env"))
 
 
@@ -62,7 +63,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware"
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "Quetz.urls"
@@ -95,17 +96,14 @@ WSGI_APPLICATION = "Quetz.wsgi.application"
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 
-
 # DATABASE_URL = os.environ["DATABASE_URL"]
 
-DATABASES={}
+DATABASES = {}
 
 if "DATABASE_URL" not in os.environ:
-    os.environ[
-        "DATABASE_URL"
-    ] = ""
+    os.environ["DATABASE_URL"] = ""
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -139,7 +137,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"

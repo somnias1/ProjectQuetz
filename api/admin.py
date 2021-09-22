@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # from .models.Greetings import Greeting
-from .models import User
+from .models import User, Tema
 
 # Register your models here.
 
@@ -40,4 +40,13 @@ class UserAdmin(admin.ModelAdmin):
     readonly_fields = [
         "fecha_registro",
         # "modified",
+    ]
+
+
+@admin.register(Tema)
+class TemaAdmin(admin.ModelAdmin):
+    list_display = ("pk", "categoria_tema", "nombre_tema")
+    search_fields = [
+        "categoria_tema",
+        "nombre_tema",
     ]

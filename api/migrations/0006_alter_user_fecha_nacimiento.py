@@ -7,13 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0005_auto_20210915_1833'),
+        ("api", "0005_auto_20210915_1833"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='fecha_nacimiento',
+            model_name="user",
+            name="fecha_nacimiento",
             field=models.DateField(default=datetime.date(2021, 9, 15)),
         ),
     ]

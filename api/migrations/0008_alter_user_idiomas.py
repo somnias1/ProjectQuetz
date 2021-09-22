@@ -7,13 +7,27 @@ import multiselectfield.db.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0007_auto_20210915_2044'),
+        ("api", "0007_auto_20210915_2044"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='idiomas',
-            field=multiselectfield.db.fields.MultiSelectField(blank=True, choices=[('en', 'Inglés'), ('es', 'Español'), ('fr', 'Francés'), ('de', 'Alemán'), ('cn', 'Chino'), ('jp', 'Japonés'), ('it', 'Italiano'), ('pt', 'Portugués')], max_length=8, null=True),
+            model_name="user",
+            name="idiomas",
+            field=multiselectfield.db.fields.MultiSelectField(
+                blank=True,
+                choices=[
+                    ("en", "Inglés"),
+                    ("es", "Español"),
+                    ("fr", "Francés"),
+                    ("de", "Alemán"),
+                    ("cn", "Chino"),
+                    ("jp", "Japonés"),
+                    ("it", "Italiano"),
+                    ("pt", "Portugués"),
+                ],
+                max_length=8,
+                null=True,
+            ),
         ),
     ]

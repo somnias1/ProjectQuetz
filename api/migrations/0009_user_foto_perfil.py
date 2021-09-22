@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0008_alter_user_idiomas'),
+        ("api", "0008_alter_user_idiomas"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='foto_perfil',
-            field=models.ImageField(blank=True, null=True, upload_to='users'),
+            model_name="user",
+            name="foto_perfil",
+            field=models.ImageField(blank=True, null=True, upload_to="users"),
         ),
     ]

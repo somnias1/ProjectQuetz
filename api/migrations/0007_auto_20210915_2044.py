@@ -6,38 +6,38 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0006_alter_user_fecha_nacimiento'),
+        ("api", "0006_alter_user_fecha_nacimiento"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='facebookurl',
+            model_name="user",
+            name="facebookurl",
             field=models.URLField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='instagramurl',
+            model_name="user",
+            name="instagramurl",
             field=models.URLField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='institucion_educativa',
+            model_name="user",
+            name="institucion_educativa",
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='twitterurl',
+            model_name="user",
+            name="twitterurl",
             field=models.URLField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='ubicacion',
+            model_name="user",
+            name="ubicacion",
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='youtubeurl',
+            model_name="user",
+            name="youtubeurl",
             field=models.URLField(blank=True, null=True),
         ),
     ]

@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0004_alter_user_fecha_nacimiento'),
+        ("api", "0004_alter_user_fecha_nacimiento"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='user',
-            name='correo',
+            model_name="user",
+            name="correo",
         ),
         migrations.AlterField(
-            model_name='user',
-            name='email',
+            model_name="user",
+            name="email",
             field=models.EmailField(max_length=254),
         ),
     ]

@@ -84,11 +84,11 @@ Recurso SIGNUP
             Content-Type: json
 
             {
-                "username": "usuarioreal",
-                "password": "contraseñausuarioreal",
-                "password_confirmation": "contraseñausuarioreal",
-                "fecha_nacimiento": "2000-01-22",
-                "email": "usuarioreal@realidad.com"
+                "username": "usuario",
+                "password": "contraseñausuario",
+                "password_confirmation": "contraseñausuario",
+                "fecha_nacimiento": "2000-06-01",
+                "email": "email@usuario.com"
             }
 
     * **Ejemplos de respuesta** 
@@ -99,19 +99,22 @@ Recurso SIGNUP
             Content-Type: json
 
             {
-                "username": "usuarioreal",
-                "last_login": null,
-                "email": "usuarioreal@realidad.com",
-                "fecha_registro": "2021-09-18",
-                "fecha_nacimiento": "2000-01-22",
-                "institucion_educativa": null,
-                "idiomas": null,
-                "ubicacion": null,
-                "facebookurl": null,
-                "twitterurl": null,
-                "youtubeurl": null,
-                "adulto": true,
-                "foto_perfil": null
+                "user": {
+                    "username": "usuario",
+                    "last_login": null,
+                    "email": "email@usuario.com",
+                    "fecha_registro": "2021-09-24",
+                    "fecha_nacimiento": "2000-06-01",
+                    "institucion_educativa": null,
+                    "idiomas": null,
+                    "ubicacion": null,
+                    "facebookurl": null,
+                    "twitterurl": null,
+                    "youtubeurl": null,
+                    "adulto": true,
+                    "foto_perfil": null
+                },
+                "access_token": "0392eec65f1bc00f0deea7dada1c00cf4a753873"
             }
 
             HTTP/1.1 400 BAD_REQUEST

@@ -7,6 +7,8 @@ from rest_framework.validators import UniqueValidator
 
 from ..models import User
 
+from datetime import date, timedelta
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -82,5 +84,9 @@ class UserSignUpSerializer(serializers.Serializer):
 
     def create(self, data):
         data.pop("password_confirmation")
-        user = User.objects.create_user(**data)
+        if (date.today() - data["fecha_nacimiento"]) > timedelta(days= 18*365):
+            user = User.objects.create_user(**data, adulto=True)
+            return user
+
+        user = User.objects.create_user(**data, adulto=False)
         return user

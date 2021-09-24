@@ -66,7 +66,7 @@ Recurso SIGNUP
 
     .. http:post:: /api/users/signup/
 
-    Realiza el registro de un usuario, sólo pueden ser adultos tras iniciar sesión
+    Realiza el registro de un usuario
 
     * **Campos olbigatorios**
 
@@ -110,7 +110,7 @@ Recurso SIGNUP
                 "facebookurl": null,
                 "twitterurl": null,
                 "youtubeurl": null,
-                "adulto": false,
+                "adulto": true,
                 "foto_perfil": null
             }
 

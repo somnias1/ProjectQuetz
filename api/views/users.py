@@ -33,12 +33,9 @@ class UserViewSet(viewsets.GenericViewSet):
         serializer = UserSignUpSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         #print(request.data)
-        """dob = datetime.strptime(serializer["fecha_nacimiento"], "%Y-%m-%d").date()
-        if (date.today() - dob) > timedelta(days=18 * 365):
-            serializer["adulto"] = True"""
+        
         user = serializer.save()
         data = UserSerializer(user).data
-        
 
         return Response(data, status=status.HTTP_201_CREATED)
 

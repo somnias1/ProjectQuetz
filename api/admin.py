@@ -6,7 +6,6 @@ from .models import User, Tema
 # Register your models here.
 
 # admin.site.register(Greeting)
-# admin.site.register(User)
 
 
 @admin.register(User)
@@ -43,10 +42,19 @@ class UserAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(Tema)
+#@admin.register(Tema)
 class TemaAdmin(admin.ModelAdmin):
     list_display = ("pk", "categoria_tema", "nombre_tema")
     search_fields = [
         "categoria_tema",
         "nombre_tema",
     ]
+
+    list_filter = [
+        "categoria_tema",
+    ]
+
+    #fields = ("categoria_tema", "nombre_tema", "imagen_tema")
+
+
+admin.site.register(Tema, TemaAdmin)

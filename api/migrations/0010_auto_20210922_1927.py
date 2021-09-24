@@ -7,26 +7,56 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0009_user_foto_perfil'),
+        ("api", "0009_user_foto_perfil"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Tema',
+            name="Tema",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('categoria_tema', models.CharField(choices=[('instmsc', 'Instrumento musical'), ('tmsc', 'Teoría musical'), ('prgm', 'Programación'), ('dbj', 'Dibujo'), ('art', 'Artesanías'), ('mnga', 'Manga - Anime'), ('ltr', 'Literatura'), ('coci', 'Cocina'), ('mrk', 'Marketing'), ('dsgn', 'Diseño')], max_length=32)),
-                ('nombre_tema', models.CharField(max_length=128, unique=True, verbose_name='Nombre del tema')),
-                ('imagen_tema', models.ImageField(upload_to='themese')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "categoria_tema",
+                    models.CharField(
+                        choices=[
+                            ("instmsc", "Instrumento musical"),
+                            ("tmsc", "Teoría musical"),
+                            ("prgm", "Programación"),
+                            ("dbj", "Dibujo"),
+                            ("art", "Artesanías"),
+                            ("mnga", "Manga - Anime"),
+                            ("ltr", "Literatura"),
+                            ("coci", "Cocina"),
+                            ("mrk", "Marketing"),
+                            ("dsgn", "Diseño"),
+                        ],
+                        max_length=32,
+                    ),
+                ),
+                (
+                    "nombre_tema",
+                    models.CharField(
+                        max_length=128, unique=True, verbose_name="Nombre del tema"
+                    ),
+                ),
+                ("imagen_tema", models.ImageField(upload_to="themese")),
             ],
             options={
-                'verbose_name': 'Tema',
-                'verbose_name_plural': 'Temas',
+                "verbose_name": "Tema",
+                "verbose_name_plural": "Temas",
             },
         ),
         migrations.AlterField(
-            model_name='user',
-            name='fecha_nacimiento',
+            model_name="user",
+            name="fecha_nacimiento",
             field=models.DateField(default=datetime.date(2021, 9, 22)),
         ),
     ]

@@ -14,12 +14,13 @@ class Tema(models.Model):
         ("coci", "Cocina"),
         ("mrk", "Marketing"),
         ("dsgn", "Diseño"),
+        ("otrs", "Otros")
     ]
     categoria_tema = models.CharField(choices=categorias, null=False, max_length=32)
     nombre_tema = models.CharField(
         "Nombre del tema", unique=True, null=False, max_length=128
     )
-    imagen_tema = models.ImageField(null=False, upload_to="themese")
+    imagen_tema = models.ImageField(null=False, upload_to="themes")
 
     class Meta:
         verbose_name = "Tema"

@@ -32,8 +32,8 @@ class UserViewSet(viewsets.GenericViewSet):
     def signup(self, request):
         serializer = UserSignUpSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        #print(request.data)
-        
+        # print(request.data)
+
         user = serializer.save()
         data = UserSerializer(user).data
 

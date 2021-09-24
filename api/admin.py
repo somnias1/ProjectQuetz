@@ -42,7 +42,7 @@ class UserAdmin(admin.ModelAdmin):
     ]
 
 
-#@admin.register(Tema)
+# @admin.register(Tema)
 class TemaAdmin(admin.ModelAdmin):
     list_display = ("pk", "categoria_tema", "nombre_tema")
     search_fields = [
@@ -54,7 +54,7 @@ class TemaAdmin(admin.ModelAdmin):
         "categoria_tema",
     ]
 
-    #fields = ("categoria_tema", "nombre_tema", "imagen_tema")
+    # fields = ("categoria_tema", "nombre_tema", "imagen_tema")
 
 
 admin.site.register(Tema, TemaAdmin)

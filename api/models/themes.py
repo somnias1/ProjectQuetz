@@ -14,7 +14,7 @@ class Tema(models.Model):
         ("coci", "Cocina"),
         ("mrk", "Marketing"),
         ("dsgn", "Diseño"),
-        ("otrs", "Otros")
+        ("otrs", "Otros"),
     ]
     categoria_tema = models.CharField(choices=categorias, null=False, max_length=32)
     nombre_tema = models.CharField(

@@ -84,7 +84,7 @@ class UserSignUpSerializer(serializers.Serializer):
 
     def create(self, data):
         data.pop("password_confirmation")
-        if (date.today() - data["fecha_nacimiento"]) > timedelta(days= 18*365):
+        if (date.today() - data["fecha_nacimiento"]) > timedelta(days=18 * 365):
             user = User.objects.create_user(**data, adulto=True)
             return user
 

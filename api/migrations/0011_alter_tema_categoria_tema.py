@@ -6,13 +6,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0010_auto_20210922_1927'),
+        ("api", "0010_auto_20210922_1927"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tema',
-            name='categoria_tema',
-            field=models.CharField(choices=[('instmsc', 'Instrumento musical'), ('tmsc', 'Teoría musical'), ('prgm', 'Programación'), ('dbj', 'Dibujo'), ('art', 'Artesanías'), ('mnga', 'Manga - Anime'), ('ltr', 'Literatura'), ('coci', 'Cocina'), ('mrk', 'Marketing'), ('dsgn', 'Diseño'), ('otrs', 'Otros')], max_length=32),
+            model_name="tema",
+            name="categoria_tema",
+            field=models.CharField(
+                choices=[
+                    ("instmsc", "Instrumento musical"),
+                    ("tmsc", "Teoría musical"),
+                    ("prgm", "Programación"),
+                    ("dbj", "Dibujo"),
+                    ("art", "Artesanías"),
+                    ("mnga", "Manga - Anime"),
+                    ("ltr", "Literatura"),
+                    ("coci", "Cocina"),
+                    ("mrk", "Marketing"),
+                    ("dsgn", "Diseño"),
+                    ("otrs", "Otros"),
+                ],
+                max_length=32,
+            ),
         ),
     ]

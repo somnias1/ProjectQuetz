@@ -7,18 +7,18 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0011_alter_tema_categoria_tema'),
+        ("api", "0011_alter_tema_categoria_tema"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tema',
-            name='imagen_tema',
-            field=models.ImageField(upload_to='themes'),
+            model_name="tema",
+            name="imagen_tema",
+            field=models.ImageField(upload_to="themes"),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='fecha_nacimiento',
+            model_name="user",
+            name="fecha_nacimiento",
             field=models.DateField(default=django.utils.timezone.now),
         ),
     ]

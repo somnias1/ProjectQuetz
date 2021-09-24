@@ -32,10 +32,10 @@ class UserViewSet(viewsets.GenericViewSet):
     def signup(self, request):
         serializer = UserSignUpSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        print(serializer)
-        dob = datetime.strptime(serializer["fecha_nacimiento"], "%Y-%m-%d").date()
+        #print(request.data)
+        """dob = datetime.strptime(serializer["fecha_nacimiento"], "%Y-%m-%d").date()
         if (date.today() - dob) > timedelta(days=18 * 365):
-            serializer["adulto"] = True
+            serializer["adulto"] = True"""
         user = serializer.save()
         data = UserSerializer(user).data
         

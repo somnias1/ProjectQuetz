@@ -25,9 +25,6 @@ class UserViewSet(viewsets.GenericViewSet):
 
         # Lee la edad del usuario que inicia sesión con el fin de validar
         # Si ya es mayor de edad en caso de que no lo fuera
-        dob = datetime.strptime(data["user"]["fecha_nacimiento"], "%Y-%m-%d").date()
-        if (date.today() - dob) > timedelta(days=18 * 365):
-            data["user"]["adulto"] = True
 
         return Response(data, status=status.HTTP_201_CREATED)
 
@@ -35,8 +32,13 @@ class UserViewSet(viewsets.GenericViewSet):
     def signup(self, request):
         serializer = UserSignUpSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        print(serializer)
+        dob = datetime.strptime(serializer["fecha_nacimiento"], "%Y-%m-%d").date()
+        if (date.today() - dob) > timedelta(days=18 * 365):
+            serializer["adulto"] = True
         user = serializer.save()
         data = UserSerializer(user).data
+        
 
         return Response(data, status=status.HTTP_201_CREATED)
 

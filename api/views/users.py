@@ -1,6 +1,7 @@
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.authtoken.models import Token
 
 from ..serializers import UserLoginSerializer, UserSerializer, UserSignUpSerializer
 
@@ -35,7 +36,8 @@ class UserViewSet(viewsets.GenericViewSet):
         # print(request.data)
 
         user = serializer.save()
-        data = UserSerializer(user).data
+        token = Token.objects.get_or_create(user=user)[0].key
+        data = {"user": UserSerializer(user).data, "access_token": token}
 
         return Response(data, status=status.HTTP_201_CREATED)
 

@@ -9,7 +9,7 @@ Recurso LOGIN
 
     Inicia sesión con credenciales de usuario
 
-    * **Campos olbigatorios**
+    * **Campos obligatorios**
 
         :username: **(string)** Nombre de usuario
         :password: **(string)** Contraseña del usuario

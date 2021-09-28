@@ -1,9 +1,18 @@
 from rest_framework import status, viewsets
-from rest_framework.decorators import action
+from rest_framework.decorators import action, permission_classes
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from rest_framework.permissions import (
+    IsAuthenticatedOrReadOnly,
+    AllowAny,
+    IsAuthenticated,
+)
 
-from ..serializers import UserLoginSerializer, UserSerializer, UserSignUpSerializer
+from ..serializers import (
+    UserLoginSerializer,
+    UserSerializer,
+    UserSignUpSerializer,
+)
 
 from ..models import User
 from datetime import date, timedelta, datetime
@@ -14,6 +23,7 @@ class UserViewSet(viewsets.GenericViewSet):
     serializer_class = UserSerializer
 
     # Acción a realizar, login
+    @permission_classes([AllowAny])
     @action(detail=False, methods=["post"])
     def login(self, request):
         serializer = UserLoginSerializer(data=request.data)
@@ -29,6 +39,7 @@ class UserViewSet(viewsets.GenericViewSet):
 
         return Response(data, status=status.HTTP_201_CREATED)
 
+    @permission_classes([AllowAny])
     @action(detail=False, methods=["post"])
     def signup(self, request):
         serializer = UserSignUpSerializer(data=request.data)
@@ -41,6 +52,7 @@ class UserViewSet(viewsets.GenericViewSet):
 
         return Response(data, status=status.HTTP_201_CREATED)
 
+    @permission_classes([AllowAny])
     @action(detail=False, methods=["get"])
     def watch(self, request):
         if (
@@ -55,4 +67,14 @@ class UserViewSet(viewsets.GenericViewSet):
             )
         serializer = UserSerializer()
         specificuser = serializer.get_specific_user(request.GET["username"])
+
         return Response(specificuser.data, status=status.HTTP_200_OK)
+
+    @permission_classes([IsAuthenticated])
+    @action(detail=False, methods=["get"])
+    def logout(self, request):
+        request.user.auth_token.delete()
+        logout(request)
+        return Response(
+            {"Éxito": "Sesión cerrada correctamente"}, status=status.HTTP_200_OK
+        )

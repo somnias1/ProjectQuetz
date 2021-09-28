@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # from .models.Greetings import Greeting
-from .models import User, Tema
+from .models import User, Tema, UserFollowing
 
 # Register your models here.
 
@@ -58,3 +58,5 @@ class TemaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Tema, TemaAdmin)
+
+admin.site.register(UserFollowing)

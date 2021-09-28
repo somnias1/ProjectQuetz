@@ -6,11 +6,15 @@ from rest_framework.authtoken.models import Token
 from rest_framework.validators import UniqueValidator
 
 from ..models import User
+from .follows import FollowingSerializer
 
 from datetime import date, timedelta
 
 
 class UserSerializer(serializers.ModelSerializer):
+    following = FollowingSerializer(many=True, read_only=True)
+    # followers = serializers.SerializerMethodField()
+
     class Meta:
 
         model = User
@@ -29,6 +33,7 @@ class UserSerializer(serializers.ModelSerializer):
             "youtubeurl",
             "adulto",
             "foto_perfil",
+            "following",
         ]
 
     # En caso de que se necesiten todos los usuarios

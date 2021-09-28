@@ -1,2 +1,3 @@
 from .Greetings import db, index
-from .users import UserViewSet, UserLoginSerializer, UserSignUpSerializer
+from .users import UserViewSet
+from .follows import UserFollowingViewSet

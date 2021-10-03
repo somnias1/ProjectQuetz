@@ -69,7 +69,9 @@ class UserLoginSerializer(serializers.Serializer):
 class UserSignUpSerializer(serializers.Serializer):
     # Si el usuario ya existe, retorna error
     username = serializers.CharField(
-        validators=[UniqueValidator(queryset=User.objects.all())],min_length=8, max_length=86
+        validators=[UniqueValidator(queryset=User.objects.all())],
+        min_length=8,
+        max_length=86,
     )
     password = serializers.CharField(min_length=8, max_length=64)
     password_confirmation = serializers.CharField(min_length=8, max_length=64)

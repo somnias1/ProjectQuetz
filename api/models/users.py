@@ -19,7 +19,7 @@ class User(AbstractUser):
         ("pt", "Portugués"),
     ]
 
-    email = models.EmailField(null=False)
+    email = models.EmailField("Correo", null=False)
     fecha_registro = models.DateField(auto_now=True)
     fecha_nacimiento = models.DateField(null=False, default=date.today())
     institucion_educativa = models.CharField(null=True, blank=True, max_length=255)
@@ -31,10 +31,10 @@ class User(AbstractUser):
         max_length=len(lista_idiomas),
     )
     ubicacion = models.CharField(null=True, blank=True, max_length=255)
-    facebookurl = models.URLField(null=True, blank=True)
-    instagramurl = models.URLField(null=True, blank=True)
-    twitterurl = models.URLField(null=True, blank=True)
-    youtubeurl = models.URLField(null=True, blank=True)
+    facebookurl = models.URLField("Enlace a Facebook", null=True, blank=True)
+    instagramurl = models.URLField("Enlace a Instagram", null=True, blank=True)
+    twitterurl = models.URLField("Enlace a Twitter", null=True, blank=True)
+    youtubeurl = models.URLField("Enlace a Youtube", null=True, blank=True)
     adulto = models.BooleanField(default=False)
     foto_perfil = models.ImageField(null=True, blank=True, upload_to="users")
 

@@ -6,10 +6,10 @@ from .comments import Comentario
 
 class Respuesta(models.Model):
 
-    comentariopadre = models.ForeignKey(
+    comentario_padre = models.ForeignKey(
         "Comentario", related_name="%(class)s_Comentario", on_delete=models.CASCADE
     )
-    comentadorrespuesta = models.ForeignKey(
+    comentador_respuesta = models.ForeignKey(
         "User", related_name="%(class)s_Usuario", on_delete=models.CASCADE
     )
     fecha_respuesta = models.DateField(auto_now=True)
@@ -23,6 +23,4 @@ class Respuesta(models.Model):
         verbose_name_plural = "Respuestas"
 
     def __str__(self):
-        return (
-            f"{self.comentadorrespuesta} respondió al comentario {self.comentariopadre}"
-        )
+        return f"{self.comentador_respuesta} respondió al comentario {self.comentario_padre}"

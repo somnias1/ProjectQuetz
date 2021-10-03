@@ -3,7 +3,7 @@ from .tutorials import Tutorial
 
 
 class Paso(models.Model):
-    tutorialpadre = models.ForeignKey(
+    tutorial_padre = models.ForeignKey(
         "Tutorial", related_name="%(class)s_Tutorial", on_delete=models.CASCADE
     )
 
@@ -22,4 +22,4 @@ class Paso(models.Model):
         verbose_name_plural = "Pasos"
 
     def __str__(self):
-        return f"Paso {self.paso} del tutorial {self.tutorialpadre}"
+        return f"Paso {self.paso} del tutorial {self.tutorial_padre}"

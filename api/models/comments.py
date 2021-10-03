@@ -5,7 +5,7 @@ from .tutorials import Tutorial
 
 class Comentario(models.Model):
 
-    tutorialpadre = models.ForeignKey(
+    tutorial_padre = models.ForeignKey(
         "Tutorial", related_name="%(class)s_Tutorial", on_delete=models.CASCADE
     )
     comentador = models.ForeignKey(
@@ -22,4 +22,4 @@ class Comentario(models.Model):
         verbose_name_plural = "Comentarios"
 
     def __str__(self):
-        return f"{self.comentador} comentó en {self.tutorialpadre}"
+        return f"{self.comentador} comentó en {self.tutorial_padre}"

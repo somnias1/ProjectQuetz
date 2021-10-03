@@ -149,12 +149,12 @@ admin.site.register(TemaTutorial, TutorialTemaAdmin)
 
 
 class PasoAdmin(admin.ModelAdmin):
-    list_display = ("pk", "tutorialpadre", "paso")
-    list_display_links = ("pk", "tutorialpadre", "paso")
+    list_display = ("pk", "tutorial_padre", "paso")
+    list_display_links = ("pk", "tutorial_padre", "paso")
     # search_fields = ["tutorial__titulo", "tema__nombre_tema"]
 
     list_filter = [
-        "tutorialpadre__titulo",
+        "tutorial_padre__titulo",
     ]
 
 
@@ -162,22 +162,22 @@ admin.site.register(Paso, PasoAdmin)
 
 
 class ComentarioAdmin(admin.ModelAdmin):
-    list_display = ("pk", "tutorialpadre", "comentador")
-    list_display_links = ("pk", "tutorialpadre", "comentador")
+    list_display = ("pk", "tutorial_padre", "comentador")
+    list_display_links = ("pk", "tutorial_padre", "comentador")
     # search_fields = ["tutorial__titulo", "tema__nombre_tema"]
 
-    list_filter = ["tutorialpadre__titulo", "comentador"]
+    list_filter = ["tutorial_padre__titulo", "comentador"]
 
 
 admin.site.register(Comentario, ComentarioAdmin)
 
 
 class RespuestaAdmin(admin.ModelAdmin):
-    list_display = ("pk", "comentariopadre", "comentadorrespuesta")
-    list_display_links = ("pk", "comentariopadre", "comentadorrespuesta")
+    list_display = ("pk", "comentario_padre", "comentador_respuesta")
+    list_display_links = ("pk", "comentario_padre", "comentador_respuesta")
     # search_fields = ["tutorial__titulo", "tema__nombre_tema"]
 
-    list_filter = ["comentariopadre__comentador", "comentadorrespuesta"]
+    list_filter = ["comentario_padre__comentador", "comentador_respuesta"]
 
 
 admin.site.register(Respuesta, RespuestaAdmin)

@@ -74,7 +74,7 @@ class UserViewSet(viewsets.GenericViewSet):
     @action(detail=False, methods=["get"])
     def logout(self, request):
         request.user.auth_token.delete()
-        logout(request)
+        #logout(request)
         return Response(
             {"Éxito": "Sesión cerrada correctamente"}, status=status.HTTP_200_OK
         )

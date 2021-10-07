@@ -198,7 +198,46 @@ Recurso WATCH
                 "Error": "Username inválido"
             }    
 
+ Recurso LOGOUT
+-------------
+
+    .. http:get:: /api/users/logout/
+
+    Cierra la sesión activa
+
+    * **Campos olbigatorios**
+
+        :Authorization: **(token)** Token del usuario
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            GET /api/users/logout/
+            Content-Type: None
+            Authorization: Token 4bb5315c61eae164656d2765b46a5447073d09b5
+
+    * **Ejemplos de respuesta** 
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "Éxito": "Sesión cerrada correctamente"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "detail": "Las credenciales de autenticación no se proveyeron"
+            }
+
+
 :status 200: Petición completada
 :status 201: Usuario o token creado
 :status 301: Redirigido debido a una solicitud de watch con una URL mal escrita
 :status 400: Valores inválidos
+:status 401: Token de autorización inválido

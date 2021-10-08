@@ -149,8 +149,8 @@ admin.site.register(TemaTutorial, TutorialTemaAdmin)
 
 
 class PasoAdmin(admin.ModelAdmin):
-    list_display = ("pk", "tutorial_padre", "paso")
-    list_display_links = ("pk", "tutorial_padre", "paso")
+    list_display = ("pk", "tutorial_padre", "numero_paso")
+    list_display_links = ("pk", "tutorial_padre", "numero_paso")
     # search_fields = ["tutorial__titulo", "tema__nombre_tema"]
 
     list_filter = [

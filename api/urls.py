@@ -8,6 +8,7 @@ router = DefaultRouter()
 router.register(r"users", UserViewSet, basename="usuarios")
 router.register(r"users/social", UserFollowingViewSet, basename="follows")
 router.register(r"tutorials", TutorialViewSet)
+#router.register(r"tutorials/(?P<tutorial>.+)/steps", PasosViewSet,basename="pasos")
 
 urlpatterns = [
     path("", include(router.urls)),

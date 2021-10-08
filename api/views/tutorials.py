@@ -12,15 +12,13 @@ from ..serializers import TutorialSerializer
 
 from .permissions import IsOwnerOrReadOnly
 
+
 class TutorialViewSet(viewsets.ModelViewSet):
     queryset = Tutorial.objects.all()
     serializer_class = TutorialSerializer
-    permission_classes = [
-        IsAuthenticatedOrReadOnly,
-        IsOwnerOrReadOnly
-    ]
+    permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
 
     def get_serializer_context(self):
-        context = super(TutorialViewSet,self).get_serializer_context()
-        context.update({"request":self.request})
+        context = super(TutorialViewSet, self).get_serializer_context()
+        context.update({"request": self.request})
         return context

@@ -9,7 +9,7 @@ class Paso(models.Model):
 
     numero_paso = models.IntegerField("Número de paso", null=False, blank=False)
     imagen = models.ImageField(
-        "Imagen de referencia (No es obligatoria)", blank=True, upload_to="steps"
+        "Imagen de referencia (No es obligatoria)", null=True, blank=True, upload_to="steps"
     )
     descripcion = models.TextField(
         "Descripción del paso",

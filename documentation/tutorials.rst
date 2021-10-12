@@ -48,7 +48,8 @@ recurso POST
                 "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg"
                 "descripcion: "Te enseñaré paso a paso cómo realizar una deliciosa aguapanela"
                 "nivel": "bas",
-                "sensible": false
+                "sensible": false,
+                "paso_Tutorial": []
             }
 
             HTTP/1.1 400 BAD_REQUEST
@@ -91,26 +92,36 @@ Recurso GET
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                     "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                     "nivel": "bas",
-                    "sensible": false
+                    "sensible": false,
+                    "paso_Tutorial": [
+                        {
+                            "numero_paso": 1,
+                            "imagen": "http://localhost:8000/media/steps/12-222683488_9hl70gr.jpg",
+                            "descripcion": "Para la creación de un tutorial es importante saber que cada paso es importante, no debes correr antes de caminar, ni apresurar las acciones que deben ser tomadas\r\nIntenta que cada paso sea específico, centrado en lo que debe hacerse en ese instante, si consideras que un paso es demasiado grande, intenta partirlo en múltiples pasos más pequeños",
+                            "adjunto": null
+                        }
+                    ]
                 },
                 {
                     "titulo": "Cosas",
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2_uCfjJL9.png",
                     "descripcion": "Cosas que se hacen",
                     "nivel": "bas",
-                    "sensible": false
+                    "sensible": false,
+                    "paso_Tutorial": []
                 },
                 {
                     "titulo": "Como hacer aguapanela",
                     "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg",
                     "descripcion": "Te enseñaré paso a paso como realizar una deliciosa aguapanela",
                     "nivel": "bas",
-                    "sensible": false
+                    "sensible": false,
+                    "paso_Tutorial": []
                 }
             ]
 
 
-    .. http:post:: /api/tutorials/<pk>
+    .. http:get:: /api/tutorials/<pk>
 
         Recibe la información de un tutorial en específico
 
@@ -133,7 +144,15 @@ Recurso GET
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                     "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                     "nivel": "bas",
-                    "sensible": false
+                    "sensible": false,
+                    "paso_Tutorial": [
+                        {
+                            "numero_paso": 1,
+                            "imagen": "http://localhost:8000/media/steps/12-222683488_9hl70gr.jpg",
+                            "descripcion": "Para la creación de un tutorial es importante saber que cada paso es importante, no debes correr antes de caminar, ni apresurar las acciones que deben ser tomadas\r\nIntenta que cada paso sea específico, centrado en lo que debe hacerse en ese instante, si consideras que un paso es demasiado grande, intenta partirlo en múltiples pasos más pequeños",
+                            "adjunto": null
+                        }
+                    ]
                 }
 
                 HTTP/1.1 404 NOT FOUND
@@ -226,7 +245,8 @@ recurso PATCH
                 "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg"
                 "descripcion: "Te enseñaré paso a paso cómo realizar una deliciosa aguapanela"
                 "nivel": "bas",
-                "sensible": false
+                "sensible": false,
+                "paso_Tutorial": []
             }
 
             HTTP/1.1 401 UNAUTHORIZED
@@ -275,7 +295,8 @@ recurso PUT
                 "banner": "aguapanela2.png"
                 "descripcion: "Te enseñaré paso a paso, el cómo realizar una deliciosa aguapanela"
                 "nivel": "bas"
-                "sensible": True
+                "sensible": True,
+                "paso_Tutorial": []
             }
 
     * **Ejemplos de respuesta**
@@ -290,7 +311,8 @@ recurso PUT
                 "banner": "aguapanela2.png"
                 "descripcion: "Te enseñaré paso a paso, el cómo realizar una deliciosa aguapanela"
                 "nivel": "bas"
-                "sensible": true
+                "sensible": true,
+                "paso_Tutorial": []
             }
 
             HTTP/1.1 400 BAD_REQUEST

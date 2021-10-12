@@ -1,13 +1,13 @@
 from rest_framework import serializers
 from ..models import Tutorial
-#from .steps import PasosSerializer
+from .steps import PasoSerializer
 
 class TutorialSerializer(serializers.ModelSerializer):
-#    paso_Tutorial = PasosSerializer(many=True, read_only=True)
+    paso_Tutorial = PasoSerializer(many=True, read_only=True)
 
     class Meta:
         model = Tutorial
-        fields = ("titulo", "banner", "descripcion", "nivel", "sensible")
+        fields = ("titulo", "banner", "descripcion", "nivel", "sensible", "paso_Tutorial")
 
     def create(self, validated_data):
         autor = self.context["request"].user

@@ -92,37 +92,37 @@ Recurso GET
                 }
             ]         
 
-    .. http:get:: /api/tutorials/<pk>/steps/<numero_paso>
+        .. http:get:: /api/tutorials/<pk>/steps/<numero_paso>
 
-        Recibe la información de un paso en específico
+            Recibe la información de un paso en específico
 
-        * **Ejemplo de petición**
+            * **Ejemplo de petición**
 
-            .. host:: http
+                .. host:: http
 
-            GET /api/tutorials/8/steps/1
-            Content-Type: None
+                GET /api/tutorials/8/steps/1
+                Content-Type: None
 
-        * **Ejemplos de respuesta**
+            * **Ejemplos de respuesta**
 
-            .. host:: http
+                .. host:: http
 
-                HTTP/1.1 200 OK
-                Content-Type: json
+                    HTTP/1.1 200 OK
+                    Content-Type: json
 
-                {
-                    "numero_paso": 1,
-                    "imagen": null,
-                    "descripcion": "Para hacer cosas primero hay que entender el concepto, así pues, imaginemos que hay una esfera",
-                    "adjunto": "https://youtu.be/dQw4w9WgXcQ"
-                }
+                    {
+                        "numero_paso": 1,
+                        "imagen": null,
+                        "descripcion": "Para hacer cosas primero hay que entender el concepto, así pues, imaginemos que hay una esfera",
+                        "adjunto": "https://youtu.be/dQw4w9WgXcQ"
+                    }
 
-                HTTP/1.1 404 NOT FOUND
-                Content-Type: json
+                    HTTP/1.1 404 NOT FOUND
+                    Content-Type: json
 
-                {
-                    "detail": "No encontrado."
-                }
+                    {
+                        "detail": "No encontrado."
+                    }
 
 recurso DELETE
 ------------

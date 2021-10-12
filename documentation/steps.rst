@@ -100,8 +100,8 @@ Recurso GET
 
             .. host:: http
 
-            GET /api/tutorials/8/steps/1
-            Content-Type: None
+                GET /api/tutorials/8/steps/1
+                Content-Type: None
 
         * **Ejemplos de respuesta**
 

@@ -73,8 +73,8 @@ Recurso GET
 
         .. host:: http
 
-        GET /api/tutorials/8/steps
-        Content-Type: None
+            GET /api/tutorials/8/steps
+            Content-Type: None
 
     * **Ejemplos de respuesta**
 

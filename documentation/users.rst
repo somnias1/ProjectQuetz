@@ -47,7 +47,9 @@ Recurso LOGIN
                         "twitterurl": null,
                         "youtubeurl": null,
                         "adulto": false,
-                        "foto_perfil": null
+                        "foto_perfil": null,
+                        "following": [],
+                        "tutorial_Usuario": []
                 },
                 "access_token": "3076c51dad376c39984fef4e9ce9a8167e26c6f4"
             }
@@ -112,7 +114,9 @@ Recurso SIGNUP
                     "twitterurl": null,
                     "youtubeurl": null,
                     "adulto": true,
-                    "foto_perfil": null
+                    "foto_perfil": null,
+                    "following": [],
+                    "tutorial_Usuario": []  
                 },
                 "access_token": "0392eec65f1bc00f0deea7dada1c00cf4a753873"
             }
@@ -168,7 +172,18 @@ Recurso WATCH
                 "twitterurl": null,
                 "youtubeurl": null,
                 "adulto": true,
-                "foto_perfil": null
+                "foto_perfil": null,
+                "following": [],
+                "tutorial_Usuario": [
+                    {
+                        "titulo": "Cosas",
+                        "banner": "/media/tutorials/Quetz2_uCfjJL9.png",
+                        "descripcion": "Cosas que se hacen",
+                        "nivel": "bas",
+                        "sensible": false,
+                        "paso_Tutorial": []
+                    }
+                ]
             }
 
             HTTP/1.1 301 REDIRECT
@@ -188,7 +203,18 @@ Recurso WATCH
                 "twitterurl": null,
                 "youtubeurl": null,
                 "adulto": true,
-                "foto_perfil": null
+                "foto_perfil": null,
+                "following": [],
+                "tutorial_Usuario": [
+                    {
+                        "titulo": "Cosas",
+                        "banner": "/media/tutorials/Quetz2_uCfjJL9.png",
+                        "descripcion": "Cosas que se hacen",
+                        "nivel": "bas",
+                        "sensible": false,
+                        "paso_Tutorial": []
+                    }
+                ]
             }
 
             HTTP/1.1 400 BAD_REQUEST

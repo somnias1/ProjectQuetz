@@ -7,18 +7,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0025_auto_20211008_2146'),
+        ("api", "0025_auto_20211008_2146"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='paso',
-            name='imagen',
-            field=models.ImageField(blank=True, null=True, upload_to='steps', verbose_name='Imagen de referencia (No es obligatoria)'),
+            model_name="paso",
+            name="imagen",
+            field=models.ImageField(
+                blank=True,
+                null=True,
+                upload_to="steps",
+                verbose_name="Imagen de referencia (No es obligatoria)",
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='fecha_nacimiento',
+            model_name="user",
+            name="fecha_nacimiento",
             field=models.DateField(default=datetime.date(2021, 10, 12)),
         ),
     ]

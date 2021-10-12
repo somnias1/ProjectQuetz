@@ -25,7 +25,7 @@ class PasoViewSet(viewsets.ModelViewSet):
         return context
 
     def get_queryset(self):
-        qs=Paso.objects.filter(tutorial_padre__id=self.kwargs["tutorial"])
+        qs = Paso.objects.filter(tutorial_padre__id=self.kwargs["tutorial"])
         return qs
 
     def get_object(self):
@@ -33,4 +33,3 @@ class PasoViewSet(viewsets.ModelViewSet):
         if obj:
             return obj
         raise Http404
-

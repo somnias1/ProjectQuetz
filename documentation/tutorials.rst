@@ -76,8 +76,8 @@ Recurso GET
 
         .. host:: http
 
-        GET /api/tutorials/
-        Content-Type: None
+            GET /api/tutorials/
+            Content-Type: None
 
     * **Ejemplos de respuesta**
 
@@ -129,8 +129,8 @@ Recurso GET
 
             .. host:: http
 
-            GET /api/tutorials/1
-            Content-Type: None
+                GET /api/tutorials/1
+                Content-Type: None
 
         * **Ejemplos de respuesta**
 

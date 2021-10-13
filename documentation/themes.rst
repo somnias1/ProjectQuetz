@@ -8,7 +8,7 @@ recurso POST
     .. http:post:: /api/themes/
 
     Crea un tema en una de las categorías disponibles
-    :instmsc:Instrumento musical
+    :instmsc: Instrumento musical
     :tmsc: Teoría musical
     :prgm: Programación
     :dbj: Dibujo

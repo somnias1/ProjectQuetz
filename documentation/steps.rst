@@ -125,7 +125,7 @@ Recurso GET
                 }
 
 recurso DELETE
-------------
+--------------
 
     .. http:delete:: /api/tutorials/<pk>/steps/<numero_paso>
 
@@ -151,15 +151,15 @@ recurso DELETE
             Content-Type: None
 
             HTTP/1.1 404 NOT FOUND
-                Content-Type: json
+            Content-Type: json
 
-                {
-                    "detail": "No encontrado."
-                }
+            {
+                "detail": "No encontrado."
+            }
 
 
 recurso PATCH
-------------
+-------------
 
     .. http:patch:: /api/tutorials/<pk>/steps/<numero_paso>/
 
@@ -210,14 +210,14 @@ recurso PATCH
             }
 
             HTTP/1.1 404 NOT FOUND
-                Content-Type: json
+            Content-Type: json
 
-                {
-                    "detail": "No encontrado."
-                }
+            {
+                "detail": "No encontrado."
+            }
 
 recurso PUT
-------------
+-----------
 
     .. http:put:: /api/tutorials/<pk>/steps/<numero_paso>/
 
@@ -238,7 +238,7 @@ recurso PUT
 
         .. host:: http
 
-            PUT /api/tutorials/<pk>/steps
+            PUT /api/tutorials/5/steps/
             Authorization: Token TokenRealMuyReal100
             Content-Type: json
 

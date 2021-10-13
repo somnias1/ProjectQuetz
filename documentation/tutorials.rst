@@ -163,7 +163,7 @@ Recurso GET
             }
 
 recurso DELETE
-------------
+--------------
 
     .. http:delete:: /api/tutorials/<pk>
 
@@ -202,8 +202,15 @@ recurso DELETE
                 "detail": "Usted no tiene permiso para realizar esta acción."
             }
 
+            HTTP/1.1 404 NOT FOUND
+            Content-Type: json
+
+            {
+                "detail": "No encontrado."
+            }
+
 recurso PATCH
-------------
+-------------
 
     .. http:patch:: /api/tutorials/<pk>/
 
@@ -225,7 +232,7 @@ recurso PATCH
 
         .. host:: http
 
-            PATCH /api/tutorials/1
+            PATCH /api/tutorials/1/
             Authorization: Token TokenRealMuyReal100
             Content-Type: json
 
@@ -263,8 +270,15 @@ recurso PATCH
                 "detail": "Usted no tiene permiso para realizar esta acción."
             }
 
+            HTTP/1.1 404 NOT FOUND
+                Content-Type: json
+
+                {
+                    "detail": "No encontrado."
+                }
+
 recurso PUT
-------------
+-----------
 
     .. http:put:: /api/tutorials/<pk>/
 
@@ -286,7 +300,7 @@ recurso PUT
 
         .. host:: http
 
-            POST /api/tutorials/8/
+            PUT /api/tutorials/8/
             Authorization: Token TokenRealMuyReal100
             Content-Type: json
 
@@ -334,6 +348,13 @@ recurso PUT
 
             {
                 "detail": "Usted no tiene permiso para realizar esta acción."
+            }
+
+            HTTP/1.1 404 NOT FOUND
+            Content-Type: json
+
+            {
+                "detail": "No encontrado."
             }
 
 

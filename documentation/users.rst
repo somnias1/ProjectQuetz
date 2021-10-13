@@ -224,7 +224,7 @@ Recurso WATCH
                 "Error": "Username inválido"
             }    
 
- Recurso LOGOUT
+Recurso LOGOUT
 -------------
 
     .. http:get:: /api/users/logout/

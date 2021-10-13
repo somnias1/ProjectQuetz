@@ -70,7 +70,7 @@ Recurso SIGNUP
 
     Realiza el registro de un usuario
 
-    * **Campos olbigatorios**
+    * **Campos obligatorios**
 
         :username: **(string)** Nombre de usuario
         :password: **(string)** Contraseña del usuario
@@ -140,7 +140,7 @@ Recurso WATCH
 
     Ve la información de un usuario
 
-    * **Campos olbigatorios**
+    * **Campos obligatorios**
 
         :username: **(string)** Nombre de usuario a consultar
 
@@ -224,14 +224,14 @@ Recurso WATCH
                 "Error": "Username inválido"
             }    
 
- Recurso LOGOUT
+Recurso LOGOUT
 -------------
 
     .. http:get:: /api/users/logout/
 
     Cierra la sesión activa
 
-    * **Campos olbigatorios**
+    * **Campos obligatorios**
 
         :Authorization: **(token)** Token del usuario
 

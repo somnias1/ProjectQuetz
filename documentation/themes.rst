@@ -8,17 +8,18 @@ recurso POST
     .. http:post:: /api/themes/
 
     Crea un tema en una de las categorías disponibles
-    :instmsc: Instrumento musical
-    :tmsc: Teoría musical
-    :prgm: Programación
-    :dbj: Dibujo
-    :art: Artesanías
-    :mnga: Manga - Anime
-    :ltr: Literatura
-    :coci: Cocina
-    :mrk: Marketing
-    :dsgn: Diseño
-    :otrs: Otros
+
+        :instmsc: Instrumento musical
+        :tmsc: Teoría musical
+        :prgm: Programación
+        :dbj: Dibujo
+        :art: Artesanías
+        :mnga: Manga - Anime
+        :ltr: Literatura
+        :coci: Cocina
+        :mrk: Marketing
+        :dsgn: Diseño
+        :otrs: Otros
 
     * **Campos obligatorios**
 

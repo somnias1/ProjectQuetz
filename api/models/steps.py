@@ -25,4 +25,4 @@ class Paso(models.Model):
         verbose_name_plural = "Pasos"
 
     def __str__(self):
-        return f"Paso {self.paso} del tutorial {self.tutorial_padre}"
+        return f"Paso {self.numero_paso} del tutorial {self.tutorial_padre}"

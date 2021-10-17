@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from multiselectfield import MultiSelectField
 from datetime import timedelta, date
 from django.utils import timezone
+from .themes import Tema
 
 
 class User(AbstractUser):
@@ -37,6 +38,8 @@ class User(AbstractUser):
     youtubeurl = models.URLField("Enlace a Youtube", null=True, blank=True)
     adulto = models.BooleanField(default=False)
     foto_perfil = models.ImageField(null=True, blank=True, upload_to="users")
+    temas_seguidos = models.ManyToManyField("Tema")
+
 
     REQUIRED_FIELDS = ["email"]
 

@@ -8,10 +8,8 @@ from .models import (
     User,
     Tema,
     UserFollowing,
-    TemaUsuario,
     Tutorial,
     Pluma,
-    TemaTutorial,
     Paso,
     Comentario,
     Respuesta,
@@ -92,21 +90,6 @@ class UserFollowingAdmin(admin.ModelAdmin):
 admin.site.register(UserFollowing, UserFollowingAdmin)
 
 
-class TemaUsuarioAdmin(admin.ModelAdmin):
-    list_display = ("pk", "tema", "usuario")
-    list_display_links = ("pk", "tema", "usuario")
-    search_fields = [
-        "tema",
-        "usuario",
-    ]
-
-    list_filter = [
-        "tema",
-    ]
-
-
-admin.site.register(TemaUsuario, TemaUsuarioAdmin)
-
 
 class TutorialAdmin(admin.ModelAdmin):
     list_display = ("pk", "titulo", "autor", "sensible")
@@ -136,16 +119,6 @@ class PlumaAdmin(admin.ModelAdmin):
 
 admin.site.register(Pluma, PlumaAdmin)
 
-
-class TutorialTemaAdmin(admin.ModelAdmin):
-    list_display = ("pk", "tutorial", "tema")
-    list_display_links = ("pk", "tutorial", "tema")
-    search_fields = ["tutorial__titulo", "tema__nombre_tema"]
-
-    list_filter = ["tutorial__titulo", "tema__nombre_tema"]
-
-
-admin.site.register(TemaTutorial, TutorialTemaAdmin)
 
 
 class PasoAdmin(admin.ModelAdmin):

@@ -36,6 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
             "adulto",
             "foto_perfil",
             "following",
+            "temas_seguidos",
             "tutorial_Usuario",
         ]
 

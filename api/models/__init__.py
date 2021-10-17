@@ -6,6 +6,4 @@ from .steps import Paso
 from .comments import Comentario
 from .responses import Respuesta
 from .themes import Tema
-from .tutorialthemes import TemaTutorial
-from .userthemes import TemaUsuario
 from .feathers import Pluma

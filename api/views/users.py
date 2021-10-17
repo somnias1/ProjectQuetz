@@ -44,7 +44,6 @@ class UserViewSet(viewsets.GenericViewSet):
     def signup(self, request):
         serializer = UserSignUpSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        # print(request.data)
 
         user = serializer.save()
         token = Token.objects.get_or_create(user=user)[0].key
@@ -74,7 +73,6 @@ class UserViewSet(viewsets.GenericViewSet):
     @action(detail=False, methods=["get"])
     def logout(self, request):
         request.user.auth_token.delete()
-        # logout(request)
         return Response(
             {"Éxito": "Sesión cerrada correctamente"}, status=status.HTTP_200_OK
         )

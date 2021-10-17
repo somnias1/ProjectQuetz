@@ -64,7 +64,7 @@ Recurso LOGIN
             }
 
 Recurso SIGNUP
--------------
+--------------
 
     .. http:post:: /api/users/signup/
 
@@ -225,7 +225,7 @@ Recurso WATCH
             }    
 
 Recurso LOGOUT
--------------
+--------------
 
     .. http:get:: /api/users/logout/
 
@@ -252,6 +252,50 @@ Recurso LOGOUT
 
             {
                 "Éxito": "Sesión cerrada correctamente"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "detail": "Las credenciales de autenticación no se proveyeron"
+            }
+
+Recurso SEGUIR TEMA
+-------------------
+
+    .. http:post:: /api/users/followthemes/
+
+    Agrega temas a los seguidos por el usuario
+
+    * **Campos obligatorios**
+
+        :Authorization: **(token)** Token del usuario
+        :temas_seguidos: **(intlist)** Lista de temas que el usuario quiere seguir
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            POST /api/users/followthemes/
+            Content-Type: json
+            Authorization: Token 4bb5315c61eae164656d2765b46a5447073d09b5
+
+            {
+                "temas_seguidos": [
+                    1, 2
+                ]
+            }
+
+    * **Ejemplos de respuesta** 
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "Éxito": "Temas seguidos correctamente"
             }
 
             HTTP/1.1 401 UNAUTHORIZED

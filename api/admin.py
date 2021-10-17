@@ -90,7 +90,6 @@ class UserFollowingAdmin(admin.ModelAdmin):
 admin.site.register(UserFollowing, UserFollowingAdmin)
 
 
-
 class TutorialAdmin(admin.ModelAdmin):
     list_display = ("pk", "titulo", "autor", "sensible")
     list_display_links = ("pk", "titulo", "autor")
@@ -118,7 +117,6 @@ class PlumaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Pluma, PlumaAdmin)
-
 
 
 class PasoAdmin(admin.ModelAdmin):

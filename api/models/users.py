@@ -40,7 +40,6 @@ class User(AbstractUser):
     foto_perfil = models.ImageField(null=True, blank=True, upload_to="users")
     temas_seguidos = models.ManyToManyField("Tema")
 
-
     REQUIRED_FIELDS = ["email"]
 
     class Meta:

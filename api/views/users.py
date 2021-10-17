@@ -70,6 +70,15 @@ class UserViewSet(viewsets.GenericViewSet):
         return Response(specificuser.data, status=status.HTTP_200_OK)
 
     @permission_classes([IsAuthenticated])
+    @action(detail=False, methods=["post"])
+    def followthemes(self, request):
+        serializer = UserSerializer()
+        serializer.add_user_themes(request.user, request.data)
+        return Response(
+            {"Exito": "Temas seguidos correctamente"}, status=status.HTTP_200_OK
+        )
+
+    @permission_classes([IsAuthenticated])
     @action(detail=False, methods=["get"])
     def logout(self, request):
         request.user.auth_token.delete()

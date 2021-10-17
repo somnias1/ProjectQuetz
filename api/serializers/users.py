@@ -49,6 +49,12 @@ class UserSerializer(serializers.ModelSerializer):
         infouser = User.objects.filter(username=validate_data)[0]
         return UserSerializer(infouser)
 
+    def add_user_themes(self, user, data):
+        infouser = User.objects.filter(username=user)[0]
+        temas = data.pop("temas_seguidos")
+        infouser.temas_seguidos.set(temas)
+        return UserSerializer(infouser)
+
 
 class UserLoginSerializer(serializers.Serializer):
     username = serializers.CharField(min_length=8, max_length=86)

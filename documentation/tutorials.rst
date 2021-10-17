@@ -12,10 +12,14 @@ recurso POST
     * **Campos obligatorios**
 
         :Authorization (HEADER): **(token)** Token del usuario creador
+        :autor: **(int)** Valor falso de validación, usa el AuthToken
         :titulo: **(string)** Título del tutorial
         :banner: **(file)** Imagen que representará el tutorial
         :descripcion: **(string)** Una descripcion corta de los temas que se cubrirán en el tutorial
-        :nivel: **(string)** Nivel de dificultad del tutorial, las 3 opciones son bas, med, adv
+        :nivel: **(string)** Nivel de dificultad del tutorial, las 3 opciones son bas, med, adv}
+        :temas_tutorial: **(intlist)** Lista de temas del tutorial, dirigirse a la documentación de temas para más información
+        :paso_Tutorial: **(Dictlist)** Lista de diccionarios con los pasos del tutorial, ver documentación de pasos para más información
+
 
     * **Campos opcionales**
 
@@ -30,11 +34,26 @@ recurso POST
             Content-Type: json
 
             {
+                "autor": 1,
                 "titulo": "Como hacer aguapanela",
                 "banner": "aguapanela.png"
                 "descripcion: "Te enseñaré paso a paso cómo realizar una deliciosa aguapanela"
-                "nivel": "bas"
-            }
+                "nivel": "bas",
+                "temas_tutorial": [2],
+                "paso_Tutorial":
+                [
+                    {
+                        "numero_paso":1,
+                        "descripcion": "Primero se debe calcular cuanta aguapanela queremos",
+                        "adjunto": "google.com"
+                    },
+                    {
+                        "numero_paso":2,
+                        "descripcion": "Despues cortaremos trozos iguales",
+                        "imagen": "panelapartida.png"
+                    }
+                ]
+            }   
 
     * **Ejemplos de respuesta**
 
@@ -44,12 +63,26 @@ recurso POST
             Content-Type: json
 
             {
+                "autor": 3,
                 "titulo": "Como hacer aguapanela",
                 "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg"
                 "descripcion: "Te enseñaré paso a paso cómo realizar una deliciosa aguapanela"
                 "nivel": "bas",
                 "sensible": false,
-                "paso_Tutorial": []
+                "temas_tutorial": [2],
+                "paso_Tutorial":
+                [
+                    {
+                        "numero_paso":1,
+                        "descripcion": "Primero se debe calcular cuanta aguapanela queremos",
+                        "adjunto": "google.com"
+                    },
+                    {
+                        "numero_paso":2,
+                        "descripcion": "Despues cortaremos trozos iguales",
+                        "imagen": "panelapartida.png"
+                    }
+                ]
             }
 
             HTTP/1.1 400 BAD_REQUEST
@@ -88,11 +121,13 @@ Recurso GET
 
             [
                 {
+                    "autor": 3,
                     "titulo": "Creación de un buen tutorial",
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                     "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                     "nivel": "bas",
                     "sensible": false,
+                    "temas_tutorial": [1],
                     "paso_Tutorial": [
                         {
                             "numero_paso": 1,
@@ -103,19 +138,23 @@ Recurso GET
                     ]
                 },
                 {
+                    "autor": 31,
                     "titulo": "Cosas",
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2_uCfjJL9.png",
                     "descripcion": "Cosas que se hacen",
                     "nivel": "bas",
                     "sensible": false,
+                    "temas_tutorial": [],
                     "paso_Tutorial": []
                 },
                 {
+                    "autor": 8,
                     "titulo": "Como hacer aguapanela",
                     "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg",
                     "descripcion": "Te enseñaré paso a paso como realizar una deliciosa aguapanela",
                     "nivel": "bas",
                     "sensible": false,
+                    "temas_tutorial": [1],
                     "paso_Tutorial": []
                 }
             ]
@@ -140,11 +179,13 @@ Recurso GET
             Content-Type: json
 
             {
+                "autor": 1,
                 "titulo": "Creación de un buen tutorial",
                 "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                 "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                 "nivel": "bas",
                 "sensible": false,
+                "temas_tutorial": [1],
                 "paso_Tutorial": [
                     {
                         "numero_paso": 1,
@@ -227,6 +268,7 @@ recurso PATCH
         :descripcion: **(string)** Una descripcion corta de los temas que se cubrirán en el tutorial
         :nivel: **(string)** Nivel de dificultad del tutorial, las 3 opciones son bas, med, adv
         :sensible: **(boolean)** Atributo de restricción de edad (Falso si no se selecciona)
+        :temas_tutorial: **(intlist)** Lista de temas del tutorial, dirigirse a la documentación de temas para más información
 
     * **Ejemplo de petición**
 
@@ -253,6 +295,7 @@ recurso PATCH
                 "descripcion: "Te enseñaré paso a paso cómo realizar una deliciosa aguapanela"
                 "nivel": "bas",
                 "sensible": false,
+                "temas_tutorial": []
                 "paso_Tutorial": []
             }
 
@@ -291,6 +334,7 @@ recurso PUT
         :banner: **(file)** Imagen que representará el tutorial
         :descripcion: **(string)** Una descripcion corta de los temas que se cubrirán en el tutorial
         :nivel: **(string)** Nivel de dificultad del tutorial, las 3 opciones son bas, med, adv
+        :temas_tutorial: **(intlist)** Lista de temas del tutorial, dirigirse a la documentación de temas para más información
 
     * **Campos opcionales**
 
@@ -310,6 +354,7 @@ recurso PUT
                 "descripcion: "Te enseñaré paso a paso, el cómo realizar una deliciosa aguapanela"
                 "nivel": "bas"
                 "sensible": True,
+                "temas_tutorial": [2],
                 "paso_Tutorial": []
             }
 
@@ -326,6 +371,7 @@ recurso PUT
                 "descripcion: "Te enseñaré paso a paso, el cómo realizar una deliciosa aguapanela"
                 "nivel": "bas"
                 "sensible": true,
+                "temas_tutorial": [2],
                 "paso_Tutorial": []
             }
 

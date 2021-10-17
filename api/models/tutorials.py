@@ -30,7 +30,7 @@ class Tutorial(models.Model):
         help_text="Es tu tutorial apto para todos?", default=False
     )
 
-    temas_tutorial = models.ManyToManyField('Tema')
+    temas_tutorial = models.ManyToManyField("Tema")
 
     class Meta:
         verbose_name = "Tutorial"

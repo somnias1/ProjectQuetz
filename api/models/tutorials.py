@@ -1,6 +1,7 @@
 from django.db import models
 from .users import User
 from .themes import Tema
+from datetime import date
 
 
 class Tutorial(models.Model):
@@ -31,6 +32,8 @@ class Tutorial(models.Model):
     )
 
     temas_tutorial = models.ManyToManyField("Tema")
+
+    fecha_creacion = models.DateField(auto_now=True)
 
     class Meta:
         verbose_name = "Tutorial"

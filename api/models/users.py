@@ -22,7 +22,7 @@ class User(AbstractUser):
 
     email = models.EmailField("Correo", null=False)
     fecha_registro = models.DateField(auto_now=True)
-    fecha_nacimiento = models.DateField(null=False, default=date.today())
+    fecha_nacimiento = models.DateField(null=False, default=timezone.now)
     institucion_educativa = models.CharField(null=True, blank=True, max_length=255)
     idiomas = MultiSelectField(
         null=True,

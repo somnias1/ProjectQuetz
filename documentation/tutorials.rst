@@ -121,23 +121,17 @@ Recurso GET
 
             [
                 {
+                    "id": 3,
                     "autor": 3,
                     "titulo": "Creación de un buen tutorial",
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                     "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                     "nivel": "bas",
                     "sensible": false,
-                    "temas_tutorial": [1],
-                    "paso_Tutorial": [
-                        {
-                            "numero_paso": 1,
-                            "imagen": "http://localhost:8000/media/steps/12-222683488_9hl70gr.jpg",
-                            "descripcion": "Para la creación de un tutorial es importante saber que cada paso es importante, no debes correr antes de caminar, ni apresurar las acciones que deben ser tomadas\r\nIntenta que cada paso sea específico, centrado en lo que debe hacerse en ese instante, si consideras que un paso es demasiado grande, intenta partirlo en múltiples pasos más pequeños",
-                            "adjunto": null
-                        }
-                    ]
+                    "temas_tutorial": [1]
                 },
                 {
+                    "id": 5,
                     "autor": 31,
                     "titulo": "Cosas",
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2_uCfjJL9.png",
@@ -145,9 +139,9 @@ Recurso GET
                     "nivel": "bas",
                     "sensible": false,
                     "temas_tutorial": [],
-                    "paso_Tutorial": []
                 },
                 {
+                    "id": 8,
                     "autor": 8,
                     "titulo": "Como hacer aguapanela",
                     "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg",
@@ -155,7 +149,6 @@ Recurso GET
                     "nivel": "bas",
                     "sensible": false,
                     "temas_tutorial": [1],
-                    "paso_Tutorial": []
                 }
             ]
 

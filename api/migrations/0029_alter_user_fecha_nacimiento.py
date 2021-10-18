@@ -7,13 +7,13 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0028_auto_20211018_1411'),
+        ("api", "0028_auto_20211018_1411"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='fecha_nacimiento',
+            model_name="user",
+            name="fecha_nacimiento",
             field=models.DateField(default=django.utils.timezone.now),
         ),
     ]

@@ -7,14 +7,14 @@ from rest_framework.validators import UniqueValidator
 
 from ..models import User
 from .follows import FollowingSerializer
-from .tutorials import TutorialSerializer
+from .tutorials import TutorialDetailSerializer
 
 from datetime import date, timedelta
 
 
 class UserSerializer(serializers.ModelSerializer):
     following = FollowingSerializer(many=True, read_only=True)
-    tutorial_Usuario = TutorialSerializer(many=True, read_only=True)
+    tutorial_Usuario = TutorialDetailSerializer(many=True, read_only=True)
     # followers = serializers.SerializerMethodField()
 
     class Meta:

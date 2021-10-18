@@ -23,10 +23,13 @@ class TutorialViewSet(viewsets.ModelViewSet):
     serializer_action_classes = {
         "list": TutorialSerializer,
     }
-    
+
     search_fields = ["titulo", "descripcion"]
-    filter_backends = (filters.SearchFilter, DjangoFilterBackend,)
-    filterset_fields = ("nivel", "temas_tutorial","autor")
+    filter_backends = (
+        filters.SearchFilter,
+        DjangoFilterBackend,
+    )
+    filterset_fields = ("nivel", "temas_tutorial", "autor")
 
     def get_serializer_class(self):
         try:

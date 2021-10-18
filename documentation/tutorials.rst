@@ -152,6 +152,50 @@ Recurso GET
                 }
             ]
 
+    .. http:get:: /api/tutorials/?[Query]=value
+
+    Realiza una consulta de los tutoriales que hay
+        :search: **(string)** Busca por título o contenido del autor
+        :nivel: **(string)** Busca por nivel de dificultad
+        :temas_tutorial: **(int)** Busca por id del tema
+        :autor: **(int)** Busca por id del autor
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            GET /api/tutorials/
+            Query-Param: nivel: bas
+            Content-Type: None
+
+    * **Ejemplos de respuesta**
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "id": 1,
+                "autor": 3,
+                "titulo": "Creación de un buen tutorial",
+                "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
+                "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
+                "nivel": "bas",
+                "sensible": false,
+                "temas_tutorial": [1],
+                "fecha_creacion": "2021-10-18"
+            }
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "nivel": [
+                    "Escoja una opción válida. bas1 no es una de las opciones disponibles."
+                ]
+            }
+
 
     .. http:get:: /api/tutorials/<pk>
 

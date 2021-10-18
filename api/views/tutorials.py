@@ -6,6 +6,9 @@ from rest_framework.permissions import (
     IsAuthenticated,
     AllowAny,
 )
+from rest_framework import filters
+
+from django_filters.rest_framework import DjangoFilterBackend
 
 from ..models import Tutorial
 from ..serializers import TutorialDetailSerializer, TutorialSerializer
@@ -20,6 +23,9 @@ class TutorialViewSet(viewsets.ModelViewSet):
     serializer_action_classes = {
         "list": TutorialSerializer,
     }
+    search_fields = ["titulo", "descripcion"]
+    filter_backends = (filters.SearchFilter, DjangoFilterBackend,)
+    filterset_fields = ("nivel", "temas_tutorial","autor")
 
     def get_serializer_class(self):
         try:

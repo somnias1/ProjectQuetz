@@ -176,12 +176,13 @@ Recurso WATCH
                 "following": [],
                 "tutorial_Usuario": [
                     {
+                        "id": 5,
                         "titulo": "Cosas",
                         "banner": "/media/tutorials/Quetz2_uCfjJL9.png",
                         "descripcion": "Cosas que se hacen",
                         "nivel": "bas",
                         "sensible": false,
-                        "paso_Tutorial": []
+                        "fecha_creacion": "2021-10-19"
                     }
                 ]
             }
@@ -207,12 +208,13 @@ Recurso WATCH
                 "following": [],
                 "tutorial_Usuario": [
                     {
+                        "id": 1,
                         "titulo": "Cosas",
                         "banner": "/media/tutorials/Quetz2_uCfjJL9.png",
                         "descripcion": "Cosas que se hacen",
                         "nivel": "bas",
                         "sensible": false,
-                        "paso_Tutorial": []
+                        "fecha_creacion": "2021-10-19"
                     }
                 ]
             }

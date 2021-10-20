@@ -6,3 +6,5 @@ from .steps import PasoViewSet
 from .themes import TemaViewSet
 
 from .permissions import IsOwnerOrReadOnly, IsTutorialOwner
+
+from .mixins import GetSerializerClassMixin

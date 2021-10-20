@@ -12,7 +12,6 @@ recurso POST
     * **Campos obligatorios**
 
         :Authorization (HEADER): **(token)** Token del usuario creador
-        :autor: **(int)** Valor falso de validación, usa el AuthToken
         :titulo: **(string)** Título del tutorial
         :banner: **(file)** Imagen que representará el tutorial
         :descripcion: **(string)** Una descripcion corta de los temas que se cubrirán en el tutorial
@@ -34,7 +33,6 @@ recurso POST
             Content-Type: json
 
             {
-                "autor": 1,
                 "titulo": "Como hacer aguapanela",
                 "banner": "aguapanela.png"
                 "descripcion: "Te enseñaré paso a paso cómo realizar una deliciosa aguapanela"
@@ -63,7 +61,6 @@ recurso POST
             Content-Type: json
 
             {
-                "autor": 3,
                 "titulo": "Como hacer aguapanela",
                 "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg"
                 "descripcion: "Te enseñaré paso a paso cómo realizar una deliciosa aguapanela"
@@ -101,7 +98,7 @@ recurso POST
 
 Recurso GET
 -----------
-    .. http:get:: /api/tutorials/
+    .. http:get:: /api/tutorials
 
     Recibe la lista de tutoriales 
 
@@ -121,34 +118,49 @@ Recurso GET
 
             [
                 {
-                    "id": 3,
-                    "autor": 3,
+                    "id": 1,
+                    "autor": {
+                        "id": 3,
+                        "username": "Quetz",
+                        "foto_perfil": null
+                    },
                     "titulo": "Creación de un buen tutorial",
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                     "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                     "nivel": "bas",
                     "sensible": false,
-                    "temas_tutorial": [1]
+                    "temas_tutorial": [1],
+                    "fecha_creacion": "2021-10-19"
                 },
                 {
                     "id": 5,
-                    "autor": 31,
+                    "autor": {
+                        "id": 1,
+                        "username": "usuarioreal",
+                        "foto_perfil": null
+                    },
                     "titulo": "Cosas",
                     "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2_uCfjJL9.png",
                     "descripcion": "Cosas que se hacen",
                     "nivel": "bas",
                     "sensible": false,
-                    "temas_tutorial": [],
+                    "temas_tutorial": [3],
+                    "fecha_creacion": "2021-10-20"
                 },
                 {
                     "id": 8,
-                    "autor": 8,
+                    "autor": {
+                        "id": 3,
+                        "username": "Quetz",
+                        "foto_perfil": null
+                    },
                     "titulo": "Como hacer aguapanela",
                     "banner": "http://127.0.0.1:8000/media/tutorials/aguapanela.jpg",
                     "descripcion": "Te enseñaré paso a paso como realizar una deliciosa aguapanela",
                     "nivel": "bas",
                     "sensible": false,
                     "temas_tutorial": [1],
+                    "fecha_creacion": "2021-10-20"
                 }
             ]
 
@@ -177,7 +189,11 @@ Recurso GET
 
             {
                 "id": 1,
-                "autor": 3,
+                "autor": {
+                        "id": 3,
+                        "username": "Quetz",
+                        "foto_perfil": null
+                },
                 "titulo": "Creación de un buen tutorial",
                 "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                 "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
@@ -216,7 +232,11 @@ Recurso GET
             Content-Type: json
 
             {
-                "autor": 1,
+                "autor": {
+                        "id": 3,
+                        "username": "Quetz",
+                        "foto_perfil": null
+                },
                 "titulo": "Creación de un buen tutorial",
                 "banner": "http://127.0.0.1:8000/media/tutorials/Quetz2.png",
                 "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",

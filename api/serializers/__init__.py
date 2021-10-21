@@ -11,5 +11,6 @@ from .tutorials import (
     TutorialBasicInfoSerializer,
     TutorialRetrieveSerializer,
 )
+from .comments import ComentarioSerializer, ComentarioInfoSerializer
 from .steps import PasoSerializer
 from .themes import TemaSerializer

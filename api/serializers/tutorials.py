@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from ..models import Tutorial, Paso, User
 from .steps import PasoSerializer
+from .comments import ComentarioInfoSerializer
 from datetime import date
 
 
@@ -79,6 +80,7 @@ class TutorialSerializer(serializers.ModelSerializer):
 class TutorialRetrieveSerializer(serializers.ModelSerializer):
     paso_Tutorial = PasoSerializer(many=True)
     autor = UserBasicInfoSerializer(read_only=True)
+    comentario_Tutorial = ComentarioInfoSerializer(many=True, read_only=True)
 
     class Meta:
         model = Tutorial
@@ -91,5 +93,6 @@ class TutorialRetrieveSerializer(serializers.ModelSerializer):
             "sensible",
             "temas_tutorial",
             "paso_Tutorial",
+            "comentario_Tutorial",
             "fecha_creacion",
         )

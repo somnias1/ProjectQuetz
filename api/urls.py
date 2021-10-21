@@ -8,6 +8,7 @@ from .views import (
     TutorialViewSet,
     PasoViewSet,
     TemaViewSet,
+    ComentarioViewSet,
 )
 
 router = DefaultRouter()
@@ -16,6 +17,7 @@ router.register(r"users/social", UserFollowingViewSet, basename="follows")
 router.register(r"tutorials", TutorialViewSet)
 router.register(r"tutorials/(?P<tutorial>.+)/steps", PasoViewSet, basename="pasos")
 router.register(r"themes", TemaViewSet, basename="temas")
+router.register(r"comments",ComentarioViewSet,basename="comentarios")
 urlpatterns = [
     path("", include(router.urls)),
 ]

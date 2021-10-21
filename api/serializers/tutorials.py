@@ -1,8 +1,9 @@
 from rest_framework import serializers
 from ..models import Tutorial, Paso, User
 from .steps import PasoSerializer
-from .comments import ComentarioInfoSerializer
 from datetime import date
+
+from .basicinfo import UserBasicInfoSerializer, ComentarioInfoSerializer
 
 
 class TutorialDetailSerializer(serializers.ModelSerializer):
@@ -33,30 +34,6 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
             Paso.objects.create(tutorial_padre=instance, **paso)
 
         return instance
-
-
-class TutorialBasicInfoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tutorial
-        fields = (
-            "id",
-            "titulo",
-            "banner",
-            "descripcion",
-            "nivel",
-            "sensible",
-            "fecha_creacion",
-        )
-
-
-class UserBasicInfoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = (
-            "id",
-            "username",
-            "foto_perfil",
-        )
 
 
 class TutorialSerializer(serializers.ModelSerializer):

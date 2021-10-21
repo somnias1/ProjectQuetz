@@ -251,6 +251,19 @@ Recurso GET
                         "adjunto": null
                     }
                 ]
+                "comentario_Tutorial": [
+                    {
+                        "id": 1,
+                        "comentador": {
+                            "id": 1,
+                            "username": "usuarioreal",
+                            "foto_perfil": "https://quetz.s3.us-east-2.amazonaws.com/users/E9ww4s2UcAIWCB-.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVLDANIIR5O6TFGCH%2F20211021%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20211021T012601Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=062e7b79c8d9b3a94682f2644f8d944568e573753a832ab9a5e8ee0bdd88fc70"
+                        },
+                        "fecha_comentario": "2021-10-03",
+                        "texto_comentario": "Un gran tutorial, aprendí a hacer mis propios tutoriales gracias a Quetz"
+                    }
+                ],
+                "fecha_creacion": "2021-10-20"
             }
 
             HTTP/1.1 404 NOT FOUND

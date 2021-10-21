@@ -14,6 +14,7 @@ class IsTutorialOwner(BasePermission):
     def has_object_permission(self, request, view, obj):
         return obj.tutorial_padre.autor == request.user
 
+
 class IsCommentOwner(BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:

@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from ..models import Comentario, User
 from datetime import date
-#from .tutorials import UserBasicInfoSerializer
+
+# from .tutorials import UserBasicInfoSerializer
 
 
 class ComentarioSerializer(serializers.ModelSerializer):
@@ -26,6 +27,7 @@ class ComentarioSerializer(serializers.ModelSerializer):
         )
         return instance
 
+
 class UserCommentBasicInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -34,9 +36,11 @@ class UserCommentBasicInfoSerializer(serializers.ModelSerializer):
             "username",
             "foto_perfil",
         )
-        
+
+
 class ComentarioInfoSerializer(serializers.ModelSerializer):
-    comentador = UserCommentBasicInfoSerializer(read_only = True)
+    comentador = UserCommentBasicInfoSerializer(read_only=True)
+
     class Meta:
         model = Comentario
         fields = (
@@ -45,4 +49,3 @@ class ComentarioInfoSerializer(serializers.ModelSerializer):
             "fecha_comentario",
             "texto_comentario",
         )
-

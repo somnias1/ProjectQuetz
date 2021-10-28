@@ -4,6 +4,7 @@ from .steps import PasoSerializer
 from datetime import date
 
 from .basicinfo import UserBasicInfoSerializer, ComentarioInfoSerializer
+from .themes import TemaSerializer
 
 
 class TutorialDetailSerializer(serializers.ModelSerializer):
@@ -38,6 +39,7 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
 
 class TutorialSerializer(serializers.ModelSerializer):
     autor = UserBasicInfoSerializer(read_only=True)
+    temas_tutorial = TemaSerializer(read_only=True, many = True)
 
     class Meta:
         model = Tutorial
@@ -58,6 +60,7 @@ class TutorialRetrieveSerializer(serializers.ModelSerializer):
     paso_Tutorial = PasoSerializer(many=True)
     autor = UserBasicInfoSerializer(read_only=True)
     comentario_Tutorial = ComentarioInfoSerializer(many=True, read_only=True)
+    temas_tutorial = TemaSerializer(read_only=True, many = True)
 
     class Meta:
         model = Tutorial

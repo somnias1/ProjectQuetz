@@ -129,7 +129,14 @@ Recurso GET
                     "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                     "nivel": "bas",
                     "sensible": false,
-                    "temas_tutorial": [1],
+                    "temas_tutorial": [
+                        {
+                            "id": 2,
+                            "categoria_tema": "prgm",
+                            "nombre_tema": "Angular",
+                            "imagen_tema": "https://quetz.s3.us-east-2.amazonaws.com/themes/angular.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVLDANIIR5O6TFGCH%2F20211028%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20211028T012213Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a49d29d1f5b5ed374191b2125bbec2513b6943237c3edc450b5ab6413634846b"
+                        }
+                    ],
                     "fecha_creacion": "2021-10-19"
                 },
                 {
@@ -159,7 +166,14 @@ Recurso GET
                     "descripcion": "Te enseñaré paso a paso como realizar una deliciosa aguapanela",
                     "nivel": "bas",
                     "sensible": false,
-                    "temas_tutorial": [1],
+                    "temas_tutorial": [
+                        {
+                            "id": 1,
+                            "categoria_tema": "tmsc",
+                            "nombre_tema": "Lectura de partituras",
+                            "imagen_tema": "https://quetz.s3.us-east-2.amazonaws.com/themese/PFP.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVLDANIIR5O6TFGCH%2F20211028%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20211028T012214Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=301f717b6340fe6354d86b7fe12c82e8f918cb372964a78795b3801a34e1f969"
+                        }
+                    ],
                     "fecha_creacion": "2021-10-20"
                 }
             ]
@@ -199,7 +213,14 @@ Recurso GET
                 "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                 "nivel": "bas",
                 "sensible": false,
-                "temas_tutorial": [1],
+                "temas_tutorial": [
+                        {
+                            "id": 2,
+                            "categoria_tema": "prgm",
+                            "nombre_tema": "Angular",
+                            "imagen_tema": "https://quetz.s3.us-east-2.amazonaws.com/themes/angular.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVLDANIIR5O6TFGCH%2F20211028%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20211028T012213Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a49d29d1f5b5ed374191b2125bbec2513b6943237c3edc450b5ab6413634846b"
+                        }
+                    ],
                 "fecha_creacion": "2021-10-18"
             }
 
@@ -242,7 +263,14 @@ Recurso GET
                 "descripcion": "En este tutorial aprenderemos cómo se crea un tutorial apropiadamente",
                 "nivel": "bas",
                 "sensible": false,
-                "temas_tutorial": [1],
+                "temas_tutorial": [
+                        {
+                            "id": 2,
+                            "categoria_tema": "prgm",
+                            "nombre_tema": "Angular",
+                            "imagen_tema": "https://quetz.s3.us-east-2.amazonaws.com/themes/angular.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVLDANIIR5O6TFGCH%2F20211028%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20211028T012213Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a49d29d1f5b5ed374191b2125bbec2513b6943237c3edc450b5ab6413634846b"
+                        }
+                    ],
                 "paso_Tutorial": [
                     {
                         "numero_paso": 1,

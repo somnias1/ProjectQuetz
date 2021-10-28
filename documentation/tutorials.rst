@@ -289,6 +289,28 @@ Recurso GET
                         },
                         "fecha_comentario": "2021-10-03",
                         "texto_comentario": "Un gran tutorial, aprendí a hacer mis propios tutoriales gracias a Quetz"
+                        "respuesta_Comentario": [
+                            {
+                                "id": 1,
+                                "comentador_respuesta": {
+                                    "id": 3,
+                                    "username": "Quetz",
+                                    "foto_perfil": null
+                                },
+                                "fecha_respuesta": "2021-10-03",
+                                "texto_respuesta": "Agradecemos mucho tu comentario, esperamos ver tus tutoriales"
+                            },
+                            {
+                                "id": 5,
+                                "comentador_respuesta": {
+                                    "id": 1,
+                                    "username": "usuarioreal",
+                                    "foto_perfil": "https://quetz.s3.us-east-2.amazonaws.com/users/E9ww4s2UcAIWCB-.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVLDANIIR5O6TFGCH%2F20211028%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20211028T203359Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=704596c37d689889aa657ce5e250367827bc242e33f571f7a35102afc1debccb"
+                                },
+                                "fecha_respuesta": "2021-10-28",
+                                "texto_respuesta": "Claro, ya está en curso"
+                            }
+                        ]
                     }
                 ],
                 "fecha_creacion": "2021-10-20"

@@ -9,6 +9,7 @@ from .views import (
     PasoViewSet,
     TemaViewSet,
     ComentarioViewSet,
+    RespuestaViewSet,
 )
 
 router = DefaultRouter()
@@ -18,6 +19,8 @@ router.register(r"tutorials", TutorialViewSet)
 router.register(r"tutorials/(?P<tutorial>.+)/steps", PasoViewSet, basename="pasos")
 router.register(r"themes", TemaViewSet, basename="temas")
 router.register(r"comments", ComentarioViewSet, basename="comentarios")
+router.register(r"replies", RespuestaViewSet, basename="respuestas")
+
 urlpatterns = [
     path("", include(router.urls)),
 ]

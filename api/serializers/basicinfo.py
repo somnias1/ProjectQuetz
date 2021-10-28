@@ -1,4 +1,4 @@
-from ..models import User, Tutorial, Comentario
+from ..models import User, Tutorial, Comentario, Respuesta
 
 from rest_framework import serializers
 
@@ -27,8 +27,22 @@ class TutorialBasicInfoSerializer(serializers.ModelSerializer):
         )
 
 
+class RespuestaInfoSerializer(serializers.ModelSerializer):
+    comentador_respuesta = UserBasicInfoSerializer(read_only=True)
+
+    class Meta:
+        model = Respuesta
+        fields = (
+            "id",
+            "comentador_respuesta",
+            "fecha_respuesta",
+            "texto_respuesta",
+        )
+
+
 class ComentarioInfoSerializer(serializers.ModelSerializer):
     comentador = UserBasicInfoSerializer(read_only=True)
+    respuesta_Comentario = RespuestaInfoSerializer(read_only=True, many=True)
 
     class Meta:
         model = Comentario
@@ -37,4 +51,5 @@ class ComentarioInfoSerializer(serializers.ModelSerializer):
             "comentador",
             "fecha_comentario",
             "texto_comentario",
+            "respuesta_Comentario",
         )

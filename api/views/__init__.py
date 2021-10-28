@@ -5,6 +5,12 @@ from .tutorials import TutorialViewSet
 from .steps import PasoViewSet
 from .themes import TemaViewSet
 from .comments import ComentarioViewSet
-from .permissions import IsOwnerOrReadOnly, IsTutorialOwner, IsCommentOwner
+from .replies import RespuestaViewSet
+from .permissions import (
+    IsOwnerOrReadOnly,
+    IsTutorialOwner,
+    IsCommentOwner,
+    IsReplyOwner,
+)
 
 from .mixins import GetSerializerClassMixin

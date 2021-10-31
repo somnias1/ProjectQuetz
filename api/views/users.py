@@ -54,6 +54,11 @@ class UserViewSet(viewsets.GenericViewSet):
     @permission_classes([IsAuthenticated])
     @action(detail=False, methods=["get"])
     def profile(self, request):
+        if not User.objects.filter(username=self.request.user).exists():
+            return Response(
+                {"Error": "Requiere sesión activa"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         serializer = UserSerializer()
         specificuser = serializer.get_specific_user(request.user)
 

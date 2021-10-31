@@ -51,6 +51,14 @@ class UserViewSet(viewsets.GenericViewSet):
 
         return Response(data, status=status.HTTP_201_CREATED)
 
+    @permission_classes([IsAuthenticated])
+    @action(detail=False, methods=["get"])
+    def profile(self, request):
+        serializer = UserSerializer()
+        specificuser = serializer.get_specific_user(request.user)
+
+        return Response(specificuser.data, status=status.HTTP_200_OK)
+
     @permission_classes([AllowAny])
     @action(detail=False, methods=["get"])
     def watch(self, request):
@@ -85,3 +93,13 @@ class UserViewSet(viewsets.GenericViewSet):
         return Response(
             {"Éxito": "Sesión cerrada correctamente"}, status=status.HTTP_200_OK
         )
+
+
+"""
+    def patch(self, request, pk):
+        testmodel_object = self.get_object(pk)
+        serializer = TestModelSerializer(testmodel_object, data=request.data, partial=True) # set partial=True to update a data partially
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(code=201, data=serializer.data)
+        return JsonResponse(code=400, data="wrong parameters")"""

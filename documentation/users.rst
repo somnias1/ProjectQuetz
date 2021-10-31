@@ -173,7 +173,13 @@ Recurso WATCH
                 "youtubeurl": null,
                 "adulto": true,
                 "foto_perfil": null,
-                "following": [],
+                "following": [
+                    {
+                        "following_user_id": 3,
+                        "getfollowingusername": "Quetz",
+                        "created": "2021-10-31T21:23:17.002124Z"
+                    }
+                ],
                 "tutorial_Usuario": [
                     {
                         "id": 5,

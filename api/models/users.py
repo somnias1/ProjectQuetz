@@ -37,7 +37,11 @@ class User(AbstractUser):
     twitterurl = models.URLField("Enlace a Twitter", null=True, blank=True)
     youtubeurl = models.URLField("Enlace a Youtube", null=True, blank=True)
     adulto = models.BooleanField(default=False)
-    foto_perfil = models.ImageField(null=True, blank=True, upload_to="users")
+    foto_perfil = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to="users",
+    )
     temas_seguidos = models.ManyToManyField("Tema")
 
     REQUIRED_FIELDS = ["email"]

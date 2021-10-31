@@ -13,8 +13,7 @@ Recurso POST
 
         
         :Authenticated: **(token)** Información de autenticación del usuario
-        :user_id: **(integer)** Id del usuario
-        :following_user_id: **(integer)** Id del usuario a Seguidores
+        :following_user_id: **(integer)** Id del usuario a seguir
         
 
         * **Ejemplo de petición**
@@ -25,7 +24,6 @@ Recurso POST
                 Content-Type: json
 
                 {
-                    "user_id": 2,
                     "following_user_id": 4
                 }
 
@@ -37,7 +35,6 @@ Recurso POST
                 Content-Type: json
 
                 {
-                    "user_id": 2,   
                     "following_user_id": 27,
                     "getfollowingusername": "usuarioadulto",
                     "created": "2021-09-28T20:50:27.973518Z"

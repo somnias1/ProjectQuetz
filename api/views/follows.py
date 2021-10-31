@@ -13,6 +13,11 @@ class UserFollowingViewSet(viewsets.ModelViewSet):
     serializer_class = FollowingSerializer
     queryset = UserFollowing.objects.all()
 
+    def get_serializer_context(self):
+        context = super(UserFollowingViewSet, self).get_serializer_context()
+        context.update({"request": self.request})
+        return context
+
 
 """
     @action(detail=False, methods=["post"])

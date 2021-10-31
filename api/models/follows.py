@@ -28,5 +28,12 @@ class UserFollowing(models.Model):
     def getfollowingusername(self):
         return self.following_user_id.username
 
+    def getfollowingprofilepicture(self):
+        try:
+            img = self.following_user_id.foto_perfil
+        except:
+            img = ""
+        return img
+
     def getbasicusername(self):
         return self.user_id.username

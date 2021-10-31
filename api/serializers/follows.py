@@ -5,7 +5,18 @@ from ..models import UserFollowing
 class FollowingSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserFollowing
-        fields = ("user_id", "following_user_id", "getfollowingusername", "created")
+        fields = (
+            "following_user_id",
+            "getfollowingusername",
+            # "getfollowingprofilepicture",
+            "created",
+        )
+
+    def create(self, validated_data):
+        user = self.context["request"].user
+        instance = super().create({**validated_data, "user_id": user})
+
+        return instance
 
 
 class FollowersSerializer(serializers.ModelSerializer):

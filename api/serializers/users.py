@@ -8,7 +8,7 @@ from rest_framework.validators import UniqueValidator
 from ..models import User
 from .follows import FollowingSerializer
 
-from .basicinfo import TutorialBasicInfoSerializer
+from .basicinfo import TutorialBasicInfoSerializer, UserBasicInfoSerializer
 
 from datetime import date, timedelta
 

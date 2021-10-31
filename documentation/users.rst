@@ -180,6 +180,9 @@ Recurso WATCH
                         "created": "2021-10-31T21:23:17.002124Z"
                     }
                 ],
+                "temas_seguidos": [
+                    3
+                ],
                 "tutorial_Usuario": [
                     {
                         "id": 5,
@@ -230,7 +233,79 @@ Recurso WATCH
 
             {
                 "Error": "Username inválido"
-            }    
+            } 
+
+Recurso PROFILE
+---------------
+
+    .. http:get:: /api/users/profile
+
+    Ve la información del usuario activo
+
+    * **Campos obligatorios**
+
+        :Authorization: **(token)** Token del usuario
+
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            GET /api/users/profile
+            Content-Type: None
+            Authorization: Token 4bb5315c61eae164656d2765b46a5447073d09b5
+
+    * **Ejemplos de respuesta** 
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "username": "usuarioreal",
+                "last_login": "2021-09-18",
+                "email": "usuarioreal@realidad.com",
+                "fecha_registro": "2021-09-18",
+                "fecha_nacimiento": "2000-01-22",
+                "institucion_educativa": null,
+                "idiomas": null,
+                "ubicacion": null,
+                "facebookurl": null,
+                "twitterurl": null,
+                "youtubeurl": null,
+                "adulto": true,
+                "foto_perfil": null,
+                "following": [
+                    {
+                        "following_user_id": 3,
+                        "getfollowingusername": "Quetz",
+                        "created": "2021-10-31T21:23:17.002124Z"
+                    }
+                ],
+                "temas_seguidos": [
+                    3
+                ],
+                "tutorial_Usuario": [
+                    {
+                        "id": 5,
+                        "titulo": "Cosas",
+                        "banner": "/media/tutorials/Quetz2_uCfjJL9.png",
+                        "descripcion": "Cosas que se hacen",
+                        "nivel": "bas",
+                        "sensible": false,
+                        "fecha_creacion": "2021-10-19"
+                    }
+                ]
+            }
+
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "Error": "Requiere sesión activa"
+            }   
 
 Recurso LOGOUT
 --------------

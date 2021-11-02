@@ -8,7 +8,6 @@ class FollowingSerializer(serializers.ModelSerializer):
         model = UserFollowing
         fields = (
             "following_user_id",
-            # "getfollowingusername",
             "created",
         )
 

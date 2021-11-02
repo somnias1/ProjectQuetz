@@ -18,5 +18,6 @@ from .basicinfo import (
     UserBasicInfoSerializer,
     TutorialBasicInfoSerializer,
     ComentarioInfoSerializer,
-    RespuestaInfoSerializer
+    RespuestaInfoSerializer,
+    FollowingInfoSerializer,
 )

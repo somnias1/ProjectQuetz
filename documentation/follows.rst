@@ -36,7 +36,6 @@ Recurso POST
 
                 {
                     "following_user_id": 27,
-                    "getfollowingusername": "usuarioadulto",
                     "created": "2021-09-28T20:50:27.973518Z"
                 }
 

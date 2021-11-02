@@ -253,7 +253,7 @@ Recurso PROFILE
 
             GET /api/users/profile
             Content-Type: None
-            Authorization: Token 4bb5315c61eae164656d2765b46a5447073d09b5
+            Authorization: Token d227f1551ed6e778dc021d14ed85fc5808a131xx
 
     * **Ejemplos de respuesta** 
 
@@ -278,8 +278,11 @@ Recurso PROFILE
                 "foto_perfil": null,
                 "following": [
                     {
-                        "following_user_id": 3,
-                        "getfollowingusername": "Quetz",
+                        "following_user_id": {
+                            "id": 3,
+                            "username": "Quetz",
+                            "foto_perfil": null
+                        },
                         "created": "2021-10-31T21:23:17.002124Z"
                     }
                 ],

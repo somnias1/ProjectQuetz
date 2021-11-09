@@ -37,6 +37,7 @@ class UserSerializer(serializers.ModelSerializer):
             "ubicacion",
             "facebookurl",
             "twitterurl",
+            "instagramurl",
             "youtubeurl",
             "adulto",
             "foto_perfil",
@@ -112,3 +113,28 @@ class UserSignUpSerializer(serializers.Serializer):
 
         user = User.objects.create_user(**data, adulto=False)
         return user
+
+
+class UserProfileUpdateSerializer(serializers.Serializer):
+    class Meta:
+        model = User
+        fields = [
+            "email",
+            "institucion_educativa",
+            "idiomas",
+            "ubicacion",
+            "facebookurl",
+            "twitterurl",
+            "instagramurl",
+            "youtubeurl",
+            "foto_perfil",
+        ]
+
+    def update_profile(self, user, data):
+        infouser = User.objects.get(username=user)
+        for key in data.keys():
+            setattr(infouser, key, data[key])
+
+        infouser.save()
+
+        return UserSerializer(infouser)

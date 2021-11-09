@@ -2,6 +2,7 @@ from .users import (
     UserLoginSerializer,
     UserSerializer,
     UserSignUpSerializer,
+    UserProfileUpdateSerializer,
 )
 from .follows import FollowersSerializer, FollowingSerializer
 from .tutorials import (

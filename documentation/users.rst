@@ -308,7 +308,61 @@ Recurso PROFILE
 
             {
                 "Error": "Requiere sesión activa"
-            }   
+            } 
+
+Recurso PROFILEUPDATE
+---------------------
+
+    .. http:patch:: /api/users/profileupdate/
+
+    Actualiza la información del usuario activo
+
+    * **Campos obligatorios**
+
+        :Authorization: **(token)** Token del usuario
+    
+    * **Campos opcionales**
+        :email: **(string)** Email del usuario
+        :institucion_educativa: **(string)** Institución educativa del usuario
+        :idiomas: **(string)** Idiomas del usuario
+        :ubicacion: **(string)** Ubicación del usuario
+        :facebookurl: **(string)** URL del perfil de Facebook del usuario
+        :twitterurl: **(string)** URL del perfil de Twitter del usuario
+        :youtubeurl: **(string)** URL del perfil de YouTube del usuario
+        :instagramurl: **(string)** URL del perfil de Instagram del usuario
+        :foto_perfil: **(file)** Foto de perfil del usuario
+
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            PATCH /api/users/profileupdate/
+            Content-Type: json
+            Authorization: Token 0392eec65f1bc00f0deea7dada1c00cf4a753xx
+
+            {
+
+            }
+
+    * **Ejemplos de respuesta** 
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "Exito": "Perfil actualizado correctamente"
+            }
+
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "Error": "Requiere sesión activa"
+            }  
 
 Recurso LOGOUT
 --------------

@@ -342,7 +342,11 @@ Recurso PROFILEUPDATE
             Authorization: Token 0392eec65f1bc00f0deea7dada1c00cf4a753xx
 
             {
-
+                "email": "perfilde@usuario.com",
+                "institucion_educativa": "UTP",
+                "idiomas": "cn",
+                "ubicacion": "Pereira",
+                "instagramurl": "instagram.com/quetzapp01/",
             }
 
     * **Ejemplos de respuesta** 

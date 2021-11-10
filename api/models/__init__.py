@@ -5,4 +5,5 @@ from .tutorials import Tutorial
 from .steps import Paso
 from .comments import Comentario
 from .replies import Respuesta
+from .announces import Comunicado
 from .themes import Tema

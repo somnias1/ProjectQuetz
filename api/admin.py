@@ -12,6 +12,7 @@ from .models import (
     Paso,
     Comentario,
     Respuesta,
+    Comunicado,
 )
 
 # Register your models here.
@@ -137,3 +138,12 @@ class RespuestaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Respuesta, RespuestaAdmin)
+
+
+class ComunicadoAdmin(admin.ModelAdmin):
+    list_display = ("pk", "comunicador", "fecha_comunicado")
+    list_display_links = ("pk", "comunicador", "fecha_comunicado")
+    list_filter = ["fecha_comunicado", "comunicador"]
+
+
+admin.site.register(Comunicado, ComunicadoAdmin)

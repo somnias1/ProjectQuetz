@@ -1,6 +1,7 @@
 from django.db import models
 
 from .tutorials import Tutorial
+from .users import User
 
 
 class Comentario(models.Model):
@@ -16,6 +17,8 @@ class Comentario(models.Model):
         "Comentario",
         help_text="Qué tal te ha parecido éste tutorial?",
     )
+
+    plumas_comentarios = models.ManyToManyField("User")
 
     class Meta:
         verbose_name = "Comentario"

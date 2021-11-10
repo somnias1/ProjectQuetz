@@ -6,4 +6,3 @@ from .steps import Paso
 from .comments import Comentario
 from .replies import Respuesta
 from .themes import Tema
-from .feathers import Pluma

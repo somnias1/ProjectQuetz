@@ -32,6 +32,7 @@ class Tutorial(models.Model):
     )
 
     temas_tutorial = models.ManyToManyField("Tema")
+    plumas_tutoriales = models.ManyToManyField("User")
 
     fecha_creacion = models.DateField(auto_now=True)
 

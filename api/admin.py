@@ -9,7 +9,6 @@ from .models import (
     Tema,
     UserFollowing,
     Tutorial,
-    Pluma,
     Paso,
     Comentario,
     Respuesta,
@@ -103,20 +102,6 @@ class TutorialAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Tutorial, TutorialAdmin)
-
-
-class PlumaAdmin(admin.ModelAdmin):
-    list_display = ("pk", "tutorial", "user")
-    list_display_links = ("pk", "tutorial", "user")
-    search_fields = [
-        "tutorial__titulo",
-        # "user"
-    ]
-
-    list_filter = ["tutorial__titulo", "tutorial__autor", "user"]
-
-
-admin.site.register(Pluma, PlumaAdmin)
 
 
 class PasoAdmin(admin.ModelAdmin):

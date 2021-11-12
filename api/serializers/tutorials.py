@@ -39,7 +39,7 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
 
 class TutorialSerializer(serializers.ModelSerializer):
     autor = UserBasicInfoSerializer(read_only=True)
-    temas_tutorial = TemaSerializer(read_only=True, many = True)
+    temas_tutorial = TemaSerializer(read_only=True, many=True)
 
     class Meta:
         model = Tutorial
@@ -53,6 +53,7 @@ class TutorialSerializer(serializers.ModelSerializer):
             "sensible",
             "temas_tutorial",
             "fecha_creacion",
+            "plumas_tutoriales",
         )
 
 
@@ -60,7 +61,7 @@ class TutorialRetrieveSerializer(serializers.ModelSerializer):
     paso_Tutorial = PasoSerializer(many=True)
     autor = UserBasicInfoSerializer(read_only=True)
     comentario_Tutorial = ComentarioInfoSerializer(many=True, read_only=True)
-    temas_tutorial = TemaSerializer(read_only=True, many = True)
+    temas_tutorial = TemaSerializer(read_only=True, many=True)
 
     class Meta:
         model = Tutorial
@@ -72,7 +73,29 @@ class TutorialRetrieveSerializer(serializers.ModelSerializer):
             "nivel",
             "sensible",
             "temas_tutorial",
+            "plumas_tutoriales",
             "paso_Tutorial",
             "comentario_Tutorial",
             "fecha_creacion",
         )
+
+
+class TutorialPlumaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tutorial
+        fields = (
+            "id",
+            "plumas_tutoriales",
+        )
+
+    def add_feather(self, user, data):
+        infotutorial = Tutorial.objects.filter(id=data["tutorial"])[0]
+        infouser = User.objects.filter(username=user)[0]
+        infotutorial.plumas_tutoriales.add(infouser)
+        return infotutorial
+
+    def remove_feather(self, user, data):
+        infotutorial = Tutorial.objects.filter(id=data["tutorial"])[0]
+        infouser = User.objects.filter(username=user)[0]
+        infotutorial.plumas_tutoriales.remove(infouser)
+        return infotutorial

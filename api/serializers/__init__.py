@@ -9,6 +9,7 @@ from .tutorials import (
     TutorialDetailSerializer,
     TutorialSerializer,
     TutorialRetrieveSerializer,
+    TutorialPlumaSerializer,
 )
 from .comments import ComentarioSerializer
 from .replies import RespuestaSerializer

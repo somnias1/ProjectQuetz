@@ -523,6 +523,107 @@ recurso PUT
                 "detail": "No encontrado."
             }
 
+recurso EMPLUMAR
+----------------
+
+
+    .. http:post:: /api/tutorials/feathers/emplumar/
+
+    Añade una pluma a un tutorial
+
+    * **Campos obligatorios**
+
+        :Authorization (HEADER): **(token)** Token del usuario
+        :tutorial: **(int)** ID del tutorial a emplumar
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            POST /api/tutorials/feathers/emplumar/
+            Authorization: Token TokenRealMuyReal100
+            Content-Type: json
+
+            {
+                "tutorial": 1
+            }
+
+    * **Ejemplos de respuesta**
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "Exito": "Tutorial emplumado correctamente"
+            }
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "Error": "Tutorial inválido"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "Error": "Requiere sesión activa"
+            }
+
+recurso DESPLUMAR
+-----------------
+
+
+    .. http:post:: /api/tutorials/feathers/desplumar/
+
+    Añade una pluma a un tutorial
+
+    * **Campos obligatorios**
+
+        :Authorization (HEADER): **(token)** Token del usuario
+        :tutorial: **(int)** ID del tutorial a desplumar
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            POST /api/tutorials/feathers/desplumar/
+            Authorization: Token TokenRealMuyReal100
+            Content-Type: json
+
+            {
+                "tutorial": 1
+            }
+
+    * **Ejemplos de respuesta**
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "Exito": "Tutorial desplumado correctamente"
+            }
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "Error": "Tutorial inválido"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "Error": "Requiere sesión activa"
+            }
+
+
 
 :status 200: Petición completada
 :status 201: Tutorial creado

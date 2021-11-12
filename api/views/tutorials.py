@@ -55,7 +55,7 @@ class TutorialPlumaViewSet(viewsets.GenericViewSet):
         if not User.objects.filter(username=self.request.user).exists():
             return Response(
                 {"Error": "Requiere sesión activa"},
-                status=status.HTTP_400_BAD_REQUEST,
+                status=status.HTTP_401_UNAUTHORIZED,
             )
         if (
             not request.data
@@ -78,7 +78,7 @@ class TutorialPlumaViewSet(viewsets.GenericViewSet):
         if not User.objects.filter(username=self.request.user).exists():
             return Response(
                 {"Error": "Requiere sesión activa"},
-                status=status.HTTP_400_BAD_REQUEST,
+                status=status.HTTP_401_UNAUTHORIZED,
             )
         if (
             not request.data

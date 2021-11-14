@@ -293,6 +293,9 @@ Recurso GET
                         },
                         "fecha_comentario": "2021-10-03",
                         "texto_comentario": "Un gran tutorial, aprendí a hacer mis propios tutoriales gracias a Quetz"
+                        "plumas_comentarios": [
+                            3
+                        ],
                         "respuesta_Comentario": [
                             {
                                 "id": 1,

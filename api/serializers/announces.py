@@ -48,13 +48,13 @@ class ComunicadoPlumaSerializer(serializers.ModelSerializer):
         )
 
     def add_feather(self, user, data):
-        infocomunicado = Tutorial.objects.filter(id=data["comunicado"])[0]
+        infocomunicado = Comunicado.objects.filter(id=data["comunicado"])[0]
         infouser = User.objects.filter(username=user)[0]
         infocomunicado.plumas_comunicados.add(infouser)
         return infocomunicado
 
     def remove_feather(self, user, data):
-        infocomunicado = Tutorial.objects.filter(id=data["comunicado"])[0]
+        infocomunicado = Comunicado.objects.filter(id=data["comunicado"])[0]
         infouser = User.objects.filter(username=user)[0]
         infocomunicado.plumas_comunicados.remove(infouser)
         return infocomunicado

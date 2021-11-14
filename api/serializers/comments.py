@@ -24,3 +24,24 @@ class ComentarioSerializer(serializers.ModelSerializer):
             }
         )
         return instance
+
+
+class ComentarioPlumaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comentario
+        fields = (
+            "id",
+            "plumas_comentarios",
+        )
+
+    def add_feather(self, user, data):
+        infocomentario = Comentario.objects.filter(id=data["comentario"])[0]
+        infouser = User.objects.filter(username=user)[0]
+        infocomentario.plumas_comentarios.add(infouser)
+        return infocomentario
+
+    def remove_feather(self, user, data):
+        infocomentario = Comentario.objects.filter(id=data["comentario"])[0]
+        infouser = User.objects.filter(username=user)[0]
+        infocomentario.plumas_comentarios.remove(infouser)
+        return infocomentario

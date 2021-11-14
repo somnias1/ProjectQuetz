@@ -51,6 +51,7 @@ class ComentarioInfoSerializer(serializers.ModelSerializer):
             "comentador",
             "fecha_comentario",
             "texto_comentario",
+            "plumas_comentarios",
             "respuesta_Comentario",
         )
 

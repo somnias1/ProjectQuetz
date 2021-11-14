@@ -251,3 +251,11 @@ recurso DESPLUMAR
             }
 
 
+:status 200: Petición completada
+:status 201: Comunicado creado
+:status 204: Eliminación del comunicado completada
+:status 400: Valores inválidos
+:status 401: Token de autorización inválido
+:status 403: Permisos insuficientes para realizar una acción
+:status 404: Comunicado no encontrado
+

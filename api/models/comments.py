@@ -44,8 +44,6 @@ class ComentarioComunicado(models.Model):
         help_text="Qué tal te ha parecido éste tutorial?",
     )
 
-    plumas_comentarios_comunicados = models.ManyToManyField("User")
-
     class Meta:
         verbose_name = "Comentario de comunicado"
         verbose_name_plural = "Comentarios de comunicados"

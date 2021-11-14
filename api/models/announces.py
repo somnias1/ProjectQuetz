@@ -10,6 +10,7 @@ class Comunicado(models.Model):
     )
     contenido = models.CharField("Titulo del tutorial", max_length=255, null=False)
     fecha_comunicado = models.DateField(auto_now=True)
+    plumas_comunicados = models.ManyToManyField("User")
 
     class Meta:
         verbose_name = "Comunicado"

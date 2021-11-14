@@ -1,4 +1,11 @@
-from ..models import User, Tutorial, Comentario, Respuesta, UserFollowing
+from ..models import (
+    User,
+    Tutorial,
+    Comentario,
+    Respuesta,
+    UserFollowing,
+    ComentarioComunicado,
+)
 
 from rest_framework import serializers
 
@@ -64,4 +71,17 @@ class FollowingInfoSerializer(serializers.ModelSerializer):
         fields = (
             "following_user_id",
             "created",
+        )
+
+
+class ComentarioComunicadoInfoSerializer(serializers.ModelSerializer):
+    comentador = UserBasicInfoSerializer(read_only=True)
+
+    class Meta:
+        model = ComentarioComunicado
+        fields = (
+            "id",
+            "comentador",
+            "fecha_comentario",
+            "texto_comentario",
         )

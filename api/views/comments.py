@@ -6,11 +6,13 @@ from rest_framework.permissions import (
     AllowAny,
 )
 
-from ..models import Comentario, User
+from ..models import Comentario, User, ComentarioComunicado
 from ..serializers import (
     ComentarioInfoSerializer,
     ComentarioSerializer,
     ComentarioPlumaSerializer,
+    ComentarioComunicadoSerializer,
+    ComentarioComunicadoInfoSerializer,
 )
 
 from .permissions import IsCommentOwner
@@ -80,3 +82,17 @@ class ComentarioPlumaViewSet(viewsets.GenericViewSet):
         return Response(
             {"Exito": "Comentario desplumado correctamente"}, status=status.HTTP_200_OK
         )
+
+
+class ComentarioComunicadoViewSet(GetSerializerClassMixin, viewsets.ModelViewSet):
+    queryset = ComentarioComunicado.objects.all()
+    serializer_class = ComentarioComunicadoSerializer
+    permission_classes = [IsAuthenticated, IsCommentOwner]
+    serializer_action_classes = {
+        "list": ComentarioComunicadoInfoSerializer,
+    }
+
+    def get_serializer_context(self):
+        context = super(ComentarioComunicadoViewSet, self).get_serializer_context()
+        context.update({"request": self.request})
+        return context

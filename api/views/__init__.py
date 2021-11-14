@@ -4,7 +4,11 @@ from .follows import UserFollowingViewSet
 from .tutorials import TutorialViewSet, TutorialPlumaViewSet
 from .steps import PasoViewSet
 from .themes import TemaViewSet
-from .comments import ComentarioViewSet, ComentarioPlumaViewSet
+from .comments import (
+    ComentarioViewSet,
+    ComentarioPlumaViewSet,
+    ComentarioComunicadoViewSet,
+)
 from .replies import RespuestaViewSet
 from .permissions import (
     IsOwnerOrReadOnly,

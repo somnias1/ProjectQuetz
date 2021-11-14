@@ -2,7 +2,7 @@ from rest_framework import serializers
 from ..models import Comunicado, User
 from datetime import date
 
-from .basicinfo import UserBasicInfoSerializer  # , ComentarioInfoSerializer
+from .basicinfo import UserBasicInfoSerializer, ComentarioComunicadoInfoSerializer
 
 
 class ComunicadoDetailSerializer(serializers.ModelSerializer):
@@ -27,7 +27,9 @@ class ComunicadoDetailSerializer(serializers.ModelSerializer):
 
 class ComunicadoSerializer(serializers.ModelSerializer):
     comunicador = UserBasicInfoSerializer(read_only=True)
-    # comentario_Tutorial = ComentarioInfoSerializer(many=True, read_only=True)
+    comentariocomunicado_Comunicado = ComentarioComunicadoInfoSerializer(
+        many=True, read_only=True
+    )
 
     class Meta:
         model = Comunicado
@@ -36,6 +38,7 @@ class ComunicadoSerializer(serializers.ModelSerializer):
             "comunicador",
             "fecha_comunicado",
             "plumas_comunicados",
+            "comentariocomunicado_Comunicado",
         )
 
 

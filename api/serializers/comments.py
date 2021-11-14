@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Comentario, User
+from ..models import Comentario, User, ComentarioComunicado
 from datetime import date
 
 
@@ -45,3 +45,26 @@ class ComentarioPlumaSerializer(serializers.ModelSerializer):
         infouser = User.objects.filter(username=user)[0]
         infocomentario.plumas_comentarios.remove(infouser)
         return infocomentario
+
+
+class ComentarioComunicadoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ComentarioComunicado
+        fields = (
+            "comunicado_padre",
+            "fecha_comentario",
+            "texto_comentario",
+        )
+
+    def create(self, validated_data):
+        comentador = self.context["request"].user
+        comunicado = validated_data.pop("comunicado_padre")
+        instance = super().create(
+            {
+                **validated_data,
+                "comunicado_padre": comunicado,
+                "comentador": comentador,
+                "fecha_comentario": date.today(),
+            }
+        )
+        return instance

@@ -14,6 +14,7 @@ from .views import (
     RespuestaViewSet,
     ComunicadoViewSet,
     ComunicadoPlumaViewSet,
+    ComentarioComunicadoViewSet,
 )
 
 router = DefaultRouter()
@@ -32,6 +33,8 @@ router.register(r"replies", RespuestaViewSet, basename="respuestas")
 
 router.register(r"announces", ComunicadoViewSet)
 router.register(r"announces/feathers", ComunicadoPlumaViewSet)
+router.register(r"announcescomments", ComentarioComunicadoViewSet)
+
 
 urlpatterns = [
     path("", include(router.urls)),

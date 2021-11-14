@@ -13,6 +13,7 @@ from .models import (
     Comentario,
     Respuesta,
     Comunicado,
+    ComentarioComunicado,
 )
 
 # Register your models here.
@@ -147,3 +148,14 @@ class ComunicadoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Comunicado, ComunicadoAdmin)
+
+
+class ComentarioComunicadoAdmin(admin.ModelAdmin):
+    list_display = ("pk", "comunicado_padre", "comentador")
+    list_display_links = ("pk", "comunicado_padre", "comentador")
+    # search_fields = ["tutorial__titulo", "tema__nombre_tema"]
+
+    list_filter = ["comunicado_padre__comunicador", "comentador"]
+
+
+admin.site.register(ComentarioComunicado, ComentarioComunicadoAdmin)

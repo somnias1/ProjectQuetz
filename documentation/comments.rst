@@ -190,6 +190,98 @@ recurso DESPLUMAR
                 "Error": "Requiere sesión activa"
             }
 
+=======================================
+    Recurso Comentarios Comunicados
+=======================================
+
+recurso POST
+------------
+
+    .. http:post:: /api/announcescomments/
+
+    Crea un comentario en un comunicado
+
+    * **Campos obligatorios**
+
+        :Authorization (HEADER): **(token)** Token del usuario
+        :comunicado_padre: **(int)** ID del comunicado a comentar
+        :texto_comentario: **(string)** Contenido del comentario
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            POST /api/announcescomments/
+            Authorization: Token TokenRealMuyReal100
+            Content-Type: json
+
+            {
+                "comunicado_padre": 1,
+                "texto_comentario": "Espero aprender mucho"
+            }
+
+    * **Ejemplos de respuesta**
+
+        .. host:: http
+
+            HTTP/1.1 201 CREATED
+            Content-Type: json
+
+            {
+                "comunicado_padre": 1,
+                "fecha_comentario": "2021-11-14",
+                "texto_comentario": "Espero aprender mucho"
+            }
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "texto_comentario": "Este campo es requerido"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "detail": "Las credenciales de autenticación no se proveyeron"
+            }
+
+
+recurso DELETE
+--------------
+
+    .. http:delete:: /api/announcescomments/<pk>/
+
+    Elimina un comentario previamente creado
+
+    * **Campos obligatorios**
+
+        :Authorization (HEADER): **(token)** Token del usuario creador
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            DELETE /api/announcescomments/2/
+            Authorization: Token TokenRealMuyReal100
+            Content-Type: None
+
+    * **Ejemplos de respuesta**
+
+        .. host:: http
+
+            HTTP/1.1 204 NO CONTENT
+            Content-Type: None
+
+            HTTP/1.1 403 FORBIDDEN
+            Content-Type: json
+
+            {
+                "detail": "Usted no tiene permiso para realizar esta acción."
+            }
+
+
 
 :status 200: Acción sobre el comentario realizada correctamente
 :status 201: Comentario creado

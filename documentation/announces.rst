@@ -90,7 +90,19 @@ Recurso GET
                         "foto_perfil": null
                     },
                     "fecha_comunicado": "2021-11-14",
-                    "plumas_comunicados": []
+                    "plumas_comunicados": [
+                        32
+                    ],
+                    {
+                        "id": 1,
+                        "comentador": {
+                            "id": 32,
+                            "username": "usuario",
+                            "foto_perfil": null
+                        },
+                        "fecha_comentario": "2021-11-14",
+                        "texto_comentario": "Espero aprender mucho"
+                    }
                 }
             ]
 

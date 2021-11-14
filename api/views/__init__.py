@@ -12,5 +12,6 @@ from .permissions import (
     IsCommentOwner,
     IsReplyOwner,
 )
+from .announces import ComunicadoViewSet, ComunicadoPlumaViewSet
 
 from .mixins import GetSerializerClassMixin

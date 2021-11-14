@@ -16,6 +16,12 @@ from .replies import RespuestaSerializer
 from .steps import PasoSerializer
 from .themes import TemaSerializer
 
+from .announces import (
+    ComunicadoDetailSerializer,
+    ComunicadoSerializer,
+    ComunicadoPlumaSerializer,
+)
+
 from .basicinfo import (
     UserBasicInfoSerializer,
     TutorialBasicInfoSerializer,

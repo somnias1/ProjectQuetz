@@ -27,3 +27,10 @@ class IsReplyOwner(BasePermission):
         if request.method in SAFE_METHODS:
             return True
         return obj.comentador_respuesta == request.user
+
+
+class IsAnnounceOwner(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        if request.method in SAFE_METHODS:
+            return True
+        return obj.comunicador == request.user

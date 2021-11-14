@@ -90,7 +90,108 @@ recurso DELETE
             }
 
 
+recurso EMPLUMAR
+----------------
 
+
+    .. http:post:: /api/comments/feathers/emplumar/
+
+    Añade una pluma a un comentario
+
+    * **Campos obligatorios**
+
+        :Authorization (HEADER): **(token)** Token del usuario
+        :tutorial: **(int)** ID del comentario a emplumar
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            POST /api/comments/feathers/emplumar/
+            Authorization: Token TokenRealMuyReal100
+            Content-Type: json
+
+            {
+                "comentario": 1
+            }
+
+    * **Ejemplos de respuesta**
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "Exito": "Comentario emplumado correctamente"
+            }
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "Error": "Comentario inválido"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "Error": "Requiere sesión activa"
+            }
+
+recurso DESPLUMAR
+-----------------
+
+
+    .. http:post:: /api/comments/feathers/desplumar/
+
+    Añade una pluma a un comentario
+
+    * **Campos obligatorios**
+
+        :Authorization (HEADER): **(token)** Token del usuario
+        :tutorial: **(int)** ID del comentario a desplumar
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            POST /api/comments/feathers/desplumar/
+            Authorization: Token TokenRealMuyReal100
+            Content-Type: json
+
+            {
+                "comentario": 1
+            }
+
+    * **Ejemplos de respuesta**
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "Exito": "Comentario desplumado correctamente"
+            }
+
+            HTTP/1.1 400 BAD_REQUEST
+            Content-Type: json
+
+            {
+                "Error": "Comentario inválido"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "Error": "Requiere sesión activa"
+            }
+
+
+:status 200: Acción sobre el comentario realizada correctamente
 :status 201: Comentario creado
 :status 204: Eliminación del comentario completada
 :status 400: Valores inválidos

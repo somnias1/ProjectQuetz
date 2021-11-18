@@ -31,7 +31,7 @@ router.register(r"comments", ComentarioViewSet, basename="comentarios")
 router.register(r"comments/feathers", ComentarioPlumaViewSet)
 router.register(r"replies", RespuestaViewSet, basename="respuestas")
 
-router.register(r"announces", ComunicadoViewSet)
+router.register(r"announces", ComunicadoViewSet, basename="Comunicado")
 router.register(r"announces/feathers", ComunicadoPlumaViewSet)
 router.register(r"announcescomments", ComentarioComunicadoViewSet)
 

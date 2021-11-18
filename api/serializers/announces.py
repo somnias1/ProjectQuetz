@@ -36,6 +36,7 @@ class ComunicadoSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "comunicador",
+            "contenido",
             "fecha_comunicado",
             "plumas_comunicados",
             "comentariocomunicado_Comunicado",

@@ -22,13 +22,21 @@ from .mixins import GetSerializerClassMixin
 
 
 class ComunicadoViewSet(GetSerializerClassMixin, viewsets.ModelViewSet):
-    queryset = Comunicado.objects.all()
+    # queryset = Comunicado.objects.all()
     serializer_class = ComunicadoDetailSerializer
     permission_classes = [IsAuthenticated, IsAnnounceOwner]
 
     serializer_action_classes = {
         "list": ComunicadoSerializer,
     }
+
+    def get_queryset(self):
+        user = self.request.user
+        following = user.following.values_list("following_user_id", flat=True)
+        # comms = Comunicado.objects.filter(comunicador__in=following)
+        # print(following, comms)
+        queryset = Comunicado.objects.filter(comunicador__in=following)
+        return queryset
 
     def get_serializer_context(self):
         context = super(ComunicadoViewSet, self).get_serializer_context()

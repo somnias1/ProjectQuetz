@@ -8,7 +8,7 @@ class Comunicado(models.Model):
     comunicador = models.ForeignKey(
         "User", related_name="%(class)s_Usuario", on_delete=models.CASCADE
     )
-    contenido = models.CharField("Titulo del tutorial", max_length=255, null=False)
+    contenido = models.CharField("Contenido del comunicado", max_length=255, null=False)
     fecha_comunicado = models.DateField(auto_now=True)
     plumas_comunicados = models.ManyToManyField("User")
 

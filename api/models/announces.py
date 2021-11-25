@@ -1,10 +1,9 @@
 from django.db import models
 from .users import User
-from datetime import date
+from datetime import date, datetime
 
 
 class Comunicado(models.Model):
-    # user, content, date
     comunicador = models.ForeignKey(
         "User", related_name="%(class)s_Usuario", on_delete=models.CASCADE
     )
@@ -12,9 +11,21 @@ class Comunicado(models.Model):
     fecha_comunicado = models.DateField(auto_now=True)
     plumas_comunicados = models.ManyToManyField("User")
 
+    notificacion_creacion = models.ManyToManyField(
+        "User",
+        related_name="notificacion_creacion_comunicado",
+        through="NotificacionCreacionComunicado",
+    )
+
     class Meta:
         verbose_name = "Comunicado"
         verbose_name_plural = "Comunicados"
 
     def __str__(self):
         return f"Comunicado por {self.comunicador}"
+
+
+class NotificacionCreacionComunicado(models.Model):
+    usuario = models.ForeignKey("User", on_delete=models.CASCADE)
+    comunicado = models.ForeignKey("Comunicado", on_delete=models.CASCADE)
+    fecha_notificacion = models.DateTimeField(auto_now=True)

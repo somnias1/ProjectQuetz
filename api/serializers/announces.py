@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Comunicado, User
+from ..models import Comunicado, User, NotificacionCreacionComunicado
 from datetime import date
 
 from .basicinfo import UserBasicInfoSerializer, ComentarioComunicadoInfoSerializer
@@ -22,7 +22,21 @@ class ComunicadoDetailSerializer(serializers.ModelSerializer):
                 "fecha_comunicado": date.today(),
             }
         )
+
+        lista_seguidores = comunicador.followers.values_list("user_id", flat=True)
+        seguidores = User.objects.filter(id__in=lista_seguidores)
+        instance.notificacion_creacion.add(*seguidores)
+
         return instance
+
+
+class ComunicadoNotificacionCreacionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NotificacionCreacionComunicado
+        fields = (
+            "comunicado",
+            "fecha_notificacion",
+        )
 
 
 class ComunicadoSerializer(serializers.ModelSerializer):

@@ -5,5 +5,5 @@ from .tutorials import Tutorial, NotificacionCreacionTutorial
 from .steps import Paso
 from .comments import Comentario, ComentarioComunicado
 from .replies import Respuesta
-from .announces import Comunicado
+from .announces import Comunicado, NotificacionCreacionComunicado
 from .themes import Tema

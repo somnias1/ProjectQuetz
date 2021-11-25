@@ -27,6 +27,7 @@ from .announces import (
     ComunicadoDetailSerializer,
     ComunicadoSerializer,
     ComunicadoPlumaSerializer,
+    ComunicadoNotificacionCreacionSerializer,
 )
 
 from .basicinfo import (

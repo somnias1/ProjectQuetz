@@ -47,6 +47,17 @@ class RespuestaInfoSerializer(serializers.ModelSerializer):
         )
 
 
+class ComentarioMinimalInfoSerializer(serializers.ModelSerializer):
+    comentador = UserBasicInfoSerializer(read_only=True)
+
+    class Meta:
+        model = Comentario
+        fields = (
+            "id",
+            "comentador",
+        )
+
+
 class ComentarioInfoSerializer(serializers.ModelSerializer):
     comentador = UserBasicInfoSerializer(read_only=True)
     respuesta_Comentario = RespuestaInfoSerializer(read_only=True, many=True)

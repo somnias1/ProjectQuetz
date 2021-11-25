@@ -18,6 +18,7 @@ from .comments import (
     ComentarioPlumaSerializer,
     ComentarioComunicadoSerializer,
     ComentarioPlumaSerializer,
+    NotificacionComentarioSerializer,
 )
 from .replies import RespuestaSerializer
 from .steps import PasoSerializer

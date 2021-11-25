@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from ..models import Comentario, User, ComentarioComunicado
+from ..models import Comentario, User, ComentarioComunicado, NotificacionComentario
 from datetime import date
+
+from .basicinfo import ComentarioMinimalInfoSerializer
 
 
 class ComentarioSerializer(serializers.ModelSerializer):
@@ -23,7 +25,23 @@ class ComentarioSerializer(serializers.ModelSerializer):
                 "fecha_comentario": date.today(),
             }
         )
+        notificacion = NotificacionComentario(
+            autor=tutorial.autor, tutorial=tutorial, comentario=instance
+        )
+        notificacion.save()
         return instance
+
+
+class NotificacionComentarioSerializer(serializers.ModelSerializer):
+    comentario = ComentarioMinimalInfoSerializer(read_only=True)
+
+    class Meta:
+        model = NotificacionComentario
+        fields = (
+            "tutorial",
+            "comentario",
+            "fecha_notificacion",
+        )
 
 
 class ComentarioPlumaSerializer(serializers.ModelSerializer):

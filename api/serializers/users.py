@@ -16,6 +16,8 @@ from .basicinfo import (
 
 from .tutorials import TutorialNotificacionCreacionSerializer
 
+from .comments import NotificacionComentarioSerializer
+
 from .announces import ComunicadoNotificacionCreacionSerializer
 
 from datetime import date, timedelta
@@ -152,6 +154,7 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
         read_only=True, many=True
     )
     followers = FollowersSerializer(read_only=True, many=True)
+    autor_tutorial_comentado = NotificacionComentarioSerializer(many=True)
 
     class Meta:
         model = User
@@ -159,4 +162,5 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
             "notificacioncreaciontutorial_set",
             "followers",
             "notificacioncreacioncomunicado_set",
+            "autor_tutorial_comentado",
         )

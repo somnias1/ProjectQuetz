@@ -15,6 +15,7 @@ from .models import (
     Comunicado,
     ComentarioComunicado,
     NotificacionCreacionTutorial,
+    NotificacionComentario,
 )
 
 # Register your models here.
@@ -168,3 +169,10 @@ class NotificacionTutorialAdmin(admin.ModelAdmin):
 
 
 admin.site.register(NotificacionCreacionTutorial, NotificacionTutorialAdmin)
+
+
+class NotificacionComentarioAdmin(admin.ModelAdmin):
+    list_display = ("pk", "autor", "tutorial", "comentario")
+
+
+admin.site.register(NotificacionComentario, NotificacionComentarioAdmin)

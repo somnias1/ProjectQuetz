@@ -30,6 +30,19 @@ class Comentario(models.Model):
         return f"{self.comentador} comentó en {self.tutorial_padre}"
 
 
+class NotificacionComentario(models.Model):
+    autor = models.ForeignKey(
+        "User", related_name="autor_tutorial_comentado", on_delete=models.CASCADE
+    )
+    tutorial = models.ForeignKey(
+        "Tutorial", related_name="tutorial_comentado", on_delete=models.CASCADE
+    )
+    comentario = models.ForeignKey(
+        "Comentario", related_name="notificacion_comentario", on_delete=models.CASCADE
+    )
+    fecha_notificacion = models.DateTimeField(auto_now=True)
+
+
 class ComentarioComunicado(models.Model):
 
     comunicado_padre = models.ForeignKey(

@@ -30,7 +30,17 @@ class ComunicadoDetailSerializer(serializers.ModelSerializer):
         return instance
 
 
+class ComunicadorMinimalInfoSerializer(serializers.ModelSerializer):
+    comunicador = UserBasicInfoSerializer(read_only=True)
+
+    class Meta:
+        model = Comunicado
+        fields = ("id", "comunicador")
+
+
 class ComunicadoNotificacionCreacionSerializer(serializers.ModelSerializer):
+    comunicado = ComunicadorMinimalInfoSerializer(read_only=True)
+
     class Meta:
         model = NotificacionCreacionComunicado
         fields = (

@@ -465,6 +465,7 @@ Recurso NOTIFICACIONES
         :notificacioncreaciontutorial_set: Notificaciones de tutoriales creados por los usuarios seguidos
         :followers: Notificaciones de seguidores nuevos
         :notificacioncreacioncomunicado_set: Notificaciones de comunicados creados por los usuarios seguidos
+        :autor_tutorial_comentado: Notificaciones de comentarios en los tutoriales propios
 
     * **Ejemplo de petición**
 
@@ -517,6 +518,21 @@ Recurso NOTIFICACIONES
                             }
                         },
                         "fecha_notificacion": "2021-11-25T20:42:23.086684Z"
+                    }
+                ],
+                "autor_tutorial_comentado": [
+                    {
+                        "tutorial": 1,
+                        "titulo_tutorial": "Creación de un buen tutorial",
+                        "comentario": {
+                            "id": 9,
+                            "comentador": {
+                                "id": 32,
+                                "username": "usuario",
+                                "foto_perfil": null
+                            }
+                        },
+                        "fecha_notificacion": "2021-11-25T21:49:03.900756Z"
                     }
                 ]
             }

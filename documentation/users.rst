@@ -460,6 +460,11 @@ Recurso NOTIFICACIONES
 
         :Authorization: **(token)** Token del usuario
 
+    * **Explicación grupos**
+
+        :notificacioncreaciontutorial_set: Notificaciones de tutoriales creados
+        :followers: Notificaciones de seguidores nuevos
+
     * **Ejemplo de petición**
 
         .. host:: http
@@ -479,11 +484,25 @@ Recurso NOTIFICACIONES
                 "notificacioncreaciontutorial_set": [
                 {
                     "tutorial": {
-                        "id": 35,
-                        "autor": 3,
+                        "id": "Quetz",
+                        "autor": {
+                            "id": 3,
+                            "username": "Quetz",
+                            "foto_perfil": null
+                        },
                         "titulo": "Tutorial con notificaciones"
                     },
                     "fecha_notificacion": "2021-11-24T21:03:45.894016Z"
+                }
+                ],
+                "followers": [
+                    {
+                    "user_id": {
+                        "id": 2,
+                        "username": "ni monda perez",
+                        "foto_perfil": "https://quetz.s3.us-east-2.amazonaws.com/users/basic.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVLDANIIR5O6TFGCH%2F20211125%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20211125T185840Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6fbecc682d69eab455020055ff94d385fb3697d7b71d674f9ba54f0aa2f7430a"
+                    },
+                    "created": "2021-09-28T19:16:32.623156Z"
                 }
                 ]
             }

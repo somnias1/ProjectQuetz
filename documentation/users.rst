@@ -449,6 +449,59 @@ Recurso SEGUIR TEMA
                 "detail": "Las credenciales de autenticación no se proveyeron"
             }
 
+Recurso NOTIFICACIONES
+----------------------
+
+    .. http:get:: /api/users/notifications/
+
+    Visualiza las notificaciones del usuario 
+
+    * **Campos obligatorios**
+
+        :Authorization: **(token)** Token del usuario
+
+    * **Ejemplo de petición**
+
+        .. host:: http
+
+            GET /api/users/notifications/
+            Content-Type: None
+            Authorization: Token 4bb5315c61eae164656d2765b46a5447073d0
+
+    * **Ejemplos de respuesta** 
+
+        .. host:: http
+
+            HTTP/1.1 200 OK
+            Content-Type: json
+
+            {
+                "notificacioncreaciontutorial_set": [
+                {
+                    "tutorial": {
+                        "id": 35,
+                        "autor": 3,
+                        "titulo": "Tutorial con notificaciones"
+                    },
+                    "fecha_notificacion": "2021-11-24T21:03:45.894016Z"
+                }
+                ]
+            }
+
+            HTTP/1.1 400 BAD REQUEST
+            Content-Type: json
+
+            {
+                "detail": "Requiere sesión activa"
+            }
+
+            HTTP/1.1 401 UNAUTHORIZED
+            Content-Type: json
+
+            {
+                "detail": "Token inválido."
+            }
+
 
 :status 200: Petición completada
 :status 201: Usuario o token creado

@@ -62,6 +62,8 @@ class TutorialSerializer(serializers.ModelSerializer):
 
 
 class TutorialMinimalInfoSerializer(serializers.ModelSerializer):
+    autor = UserBasicInfoSerializer(read_only=True)
+
     class Meta:
         model = Tutorial
         fields = ("id", "autor", "titulo")
@@ -73,7 +75,6 @@ class TutorialNotificacionCreacionSerializer(serializers.ModelSerializer):
     class Meta:
         model = NotificacionCreacionTutorial
         fields = (
-            "tutorial",
             "tutorial",
             "fecha_notificacion",
         )

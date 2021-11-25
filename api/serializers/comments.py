@@ -4,6 +4,8 @@ from datetime import date
 
 from .basicinfo import ComentarioMinimalInfoSerializer
 
+# from .tutorials import TutorialMinimalInfoSerializer
+
 
 class ComentarioSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,11 +36,13 @@ class ComentarioSerializer(serializers.ModelSerializer):
 
 class NotificacionComentarioSerializer(serializers.ModelSerializer):
     comentario = ComentarioMinimalInfoSerializer(read_only=True)
+    titulo_tutorial = serializers.ReadOnlyField(source="tutorial.titulo")
 
     class Meta:
         model = NotificacionComentario
         fields = (
             "tutorial",
+            "titulo_tutorial",
             "comentario",
             "fecha_notificacion",
         )

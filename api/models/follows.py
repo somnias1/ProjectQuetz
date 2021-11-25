@@ -24,16 +24,3 @@ class UserFollowing(models.Model):
 
     def __str__(self):
         return f"{self.user_id} sigue a {self.following_user_id}"
-
-    def getfollowingusername(self):
-        return self.following_user_id.username
-
-    def getfollowingprofilepicture(self):
-        try:
-            img = self.following_user_id.foto_perfil
-        except:
-            img = ""
-        return img
-
-    def getbasicusername(self):
-        return self.user_id.username

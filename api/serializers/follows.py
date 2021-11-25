@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import UserFollowing
+from ..models import UserFollowing, User
 from .basicinfo import UserBasicInfoSerializer
 
 
@@ -19,6 +19,8 @@ class FollowingSerializer(serializers.ModelSerializer):
 
 
 class FollowersSerializer(serializers.ModelSerializer):
+    user_id = UserBasicInfoSerializer(read_only=True)
+
     class Meta:
         model = UserFollowing
-        fields = ("getbasicusername", "created")
+        fields = ("user_id", "created")

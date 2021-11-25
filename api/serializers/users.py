@@ -6,7 +6,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.validators import UniqueValidator
 
 from ..models import User
-from .follows import FollowingSerializer
+from .follows import FollowingSerializer, FollowersSerializer
 
 from .basicinfo import (
     TutorialBasicInfoSerializer,
@@ -146,7 +146,11 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
     notificacioncreaciontutorial_set = TutorialNotificacionCreacionSerializer(
         read_only=True, many=True
     )
+    followers = FollowersSerializer(read_only=True, many=True)
 
     class Meta:
         model = User
-        fields = ("notificacioncreaciontutorial_set",)
+        fields = (
+            "notificacioncreaciontutorial_set",
+            "followers",
+        )

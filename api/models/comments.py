@@ -63,3 +63,20 @@ class ComentarioComunicado(models.Model):
 
     def __str__(self):
         return f"{self.comentador} comentó el comunicado {self.comunicado_padre}"
+
+
+class NotificacionComentarioComunicado(models.Model):
+    comunicador = models.ForeignKey(
+        "User",
+        related_name="comunicador_comunicado_comentado",
+        on_delete=models.CASCADE,
+    )
+    comunicado = models.ForeignKey(
+        "Comunicado", related_name="comunicado_comentado", on_delete=models.CASCADE
+    )
+    comentario = models.ForeignKey(
+        "ComentarioComunicado",
+        related_name="notificacion_comentario",
+        on_delete=models.CASCADE,
+    )
+    fecha_notificacion = models.DateTimeField(auto_now=True)

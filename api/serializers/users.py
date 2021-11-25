@@ -16,7 +16,10 @@ from .basicinfo import (
 
 from .tutorials import TutorialNotificacionCreacionSerializer
 
-from .comments import NotificacionComentarioSerializer
+from .comments import (
+    NotificacionComentarioSerializer,
+    NotificacionComentarioComunicadoSerializer,
+)
 
 from .announces import ComunicadoNotificacionCreacionSerializer
 
@@ -155,6 +158,9 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
     )
     followers = FollowersSerializer(read_only=True, many=True)
     autor_tutorial_comentado = NotificacionComentarioSerializer(many=True)
+    comunicador_comunicado_comentado = NotificacionComentarioComunicadoSerializer(
+        many=True
+    )
 
     class Meta:
         model = User
@@ -163,4 +169,5 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
             "followers",
             "notificacioncreacioncomunicado_set",
             "autor_tutorial_comentado",
+            "comunicador_comunicado_comentado",
         )

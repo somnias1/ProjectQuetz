@@ -85,6 +85,17 @@ class FollowingInfoSerializer(serializers.ModelSerializer):
         )
 
 
+class ComentarioComunicadoMinimalInfoSerializer(serializers.ModelSerializer):
+    comentador = UserBasicInfoSerializer(read_only=True)
+
+    class Meta:
+        model = ComentarioComunicado
+        fields = (
+            "id",
+            "comentador",
+        )
+
+
 class ComentarioComunicadoInfoSerializer(serializers.ModelSerializer):
     comentador = UserBasicInfoSerializer(read_only=True)
 

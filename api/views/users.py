@@ -13,9 +13,11 @@ from ..serializers import (
     UserSerializer,
     UserSignUpSerializer,
     UserProfileUpdateSerializer,
+    UserNotificacionSerializer,
+    TutorialNotificacionCreacionSerializer,
 )
 
-from ..models import User
+from ..models import User, NotificacionCreacionTutorial
 from datetime import date, timedelta, datetime
 
 # Serializador general para usuarios
@@ -113,3 +115,16 @@ class UserViewSet(viewsets.GenericViewSet):
         return Response(
             {"Éxito": "Sesión cerrada correctamente"}, status=status.HTTP_200_OK
         )
+
+    @permission_classes([IsAuthenticated])
+    @action(detail=False, methods=["get"])
+    def notifications(self, request):
+        if not User.objects.filter(username=request.user).exists():
+            return Response(
+                {"Error": "Requiere sesión activa"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        serializer = UserNotificacionSerializer(request.user)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)

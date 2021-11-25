@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Tutorial, Paso, User
+from ..models import Tutorial, Paso, User, NotificacionCreacionTutorial
 from .steps import PasoSerializer
 from datetime import date
 
@@ -34,6 +34,10 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
         for paso in pasos:
             Paso.objects.create(tutorial_padre=instance, **paso)
 
+        lista_seguidores = autor.followers.values_list("user_id", flat=True)
+        seguidores = User.objects.filter(id__in=lista_seguidores)
+        instance.notificacion_creacion.add(*seguidores)
+
         return instance
 
 
@@ -54,6 +58,24 @@ class TutorialSerializer(serializers.ModelSerializer):
             "temas_tutorial",
             "fecha_creacion",
             "plumas_tutoriales",
+        )
+
+
+class TutorialMinimalInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tutorial
+        fields = ("id", "autor", "titulo")
+
+
+class TutorialNotificacionCreacionSerializer(serializers.ModelSerializer):
+    tutorial = TutorialMinimalInfoSerializer(read_only=True)
+
+    class Meta:
+        model = NotificacionCreacionTutorial
+        fields = (
+            "tutorial",
+            "tutorial",
+            "fecha_notificacion",
         )
 
 

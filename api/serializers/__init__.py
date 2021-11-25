@@ -3,6 +3,7 @@ from .users import (
     UserSerializer,
     UserSignUpSerializer,
     UserProfileUpdateSerializer,
+    UserNotificacionSerializer,
 )
 from .follows import FollowersSerializer, FollowingSerializer
 from .tutorials import (
@@ -10,6 +11,7 @@ from .tutorials import (
     TutorialSerializer,
     TutorialRetrieveSerializer,
     TutorialPlumaSerializer,
+    TutorialNotificacionCreacionSerializer,
 )
 from .comments import (
     ComentarioSerializer,

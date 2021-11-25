@@ -1,7 +1,7 @@
 from django.db import models
 from .users import User
 from .themes import Tema
-from datetime import date
+from datetime import date, datetime
 
 
 class Tutorial(models.Model):
@@ -36,9 +36,21 @@ class Tutorial(models.Model):
 
     fecha_creacion = models.DateField(auto_now=True)
 
+    notificacion_creacion = models.ManyToManyField(
+        "User",
+        related_name="notificacion_creacion_tutorial",
+        through="NotificacionCreacionTutorial",
+    )
+
     class Meta:
         verbose_name = "Tutorial"
         verbose_name_plural = "Tutoriales"
 
     def __str__(self):
         return f"{self.titulo} por {self.autor}"
+
+
+class NotificacionCreacionTutorial(models.Model):
+    usuario = models.ForeignKey("User", on_delete=models.CASCADE)
+    tutorial = models.ForeignKey("Tutorial", on_delete=models.CASCADE)
+    fecha_notificacion = models.DateTimeField(auto_now=True)

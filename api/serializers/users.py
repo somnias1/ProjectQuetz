@@ -14,6 +14,8 @@ from .basicinfo import (
     FollowingInfoSerializer,
 )
 
+from .tutorials import TutorialNotificacionCreacionSerializer
+
 from datetime import date, timedelta
 
 
@@ -138,3 +140,13 @@ class UserProfileUpdateSerializer(serializers.Serializer):
         infouser.save()
 
         return UserSerializer(infouser)
+
+
+class UserNotificacionSerializer(serializers.ModelSerializer):
+    notificacioncreaciontutorial_set = TutorialNotificacionCreacionSerializer(
+        read_only=True, many=True
+    )
+
+    class Meta:
+        model = User
+        fields = ("notificacioncreaciontutorial_set",)

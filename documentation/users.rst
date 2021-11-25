@@ -462,8 +462,9 @@ Recurso NOTIFICACIONES
 
     * **Explicación grupos**
 
-        :notificacioncreaciontutorial_set: Notificaciones de tutoriales creados
+        :notificacioncreaciontutorial_set: Notificaciones de tutoriales creados por los usuarios seguidos
         :followers: Notificaciones de seguidores nuevos
+        :notificacioncreacioncomunicado_set: Notificaciones de comunicados creados por los usuarios seguidos
 
     * **Ejemplo de petición**
 
@@ -484,7 +485,7 @@ Recurso NOTIFICACIONES
                 "notificacioncreaciontutorial_set": [
                 {
                     "tutorial": {
-                        "id": "Quetz",
+                        "id": 35,
                         "autor": {
                             "id": 3,
                             "username": "Quetz",
@@ -504,6 +505,19 @@ Recurso NOTIFICACIONES
                     },
                     "created": "2021-09-28T19:16:32.623156Z"
                 }
+                ],
+                "notificacioncreacioncomunicado_set": [
+                    {
+                        "comunicado": {
+                            "id": 4,
+                            "comunicador": {
+                                "id": 3,
+                                "username": "Quetz",
+                                "foto_perfil": null
+                            }
+                        },
+                        "fecha_notificacion": "2021-11-25T20:42:23.086684Z"
+                    }
                 ]
             }
 

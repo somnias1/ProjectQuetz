@@ -21,7 +21,7 @@ from .comments import (
     NotificacionComentarioSerializer,
     NotificacionComentarioComunicadoSerializer,
 )
-from .replies import RespuestaSerializer
+from .replies import RespuestaSerializer, NotificacionRespuestaSerializer
 from .steps import PasoSerializer
 from .themes import TemaSerializer
 

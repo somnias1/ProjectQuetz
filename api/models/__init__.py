@@ -9,6 +9,6 @@ from .comments import (
     NotificacionComentario,
     NotificacionComentarioComunicado,
 )
-from .replies import Respuesta
+from .replies import Respuesta, NotificacionRespuesta
 from .announces import Comunicado, NotificacionCreacionComunicado
 from .themes import Tema

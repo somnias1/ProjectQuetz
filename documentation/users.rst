@@ -467,6 +467,7 @@ Recurso NOTIFICACIONES
         :notificacioncreacioncomunicado_set: Notificaciones de comunicados creados por los usuarios seguidos
         :autor_tutorial_comentado: Notificaciones de comentarios en los tutoriales propios
         :comunicador_comunicado_comentado: Notificaciones de comentarios en los comunicados propios
+        :comentador_comentario: Notificaciones de respuestas en los comentarios propios
 
     * **Ejemplo de petición**
 
@@ -549,6 +550,21 @@ Recurso NOTIFICACIONES
                             }
                         },
                         "fecha_notificacion": "2021-11-25T22:25:33.359139Z"
+                    }
+                ],
+                "comentador_comentario": [
+                    {
+                        "tutorial": 5,
+                        "comentario": 4,
+                        "respuesta": {
+                            "id": 9,
+                            "comentador_respuesta": {
+                                "id": 32,
+                                "username": "usuario",
+                                "foto_perfil": null
+                            }
+                        },
+                        "fecha_notificacion": "2021-11-26T21:53:01.946795Z"
                     }
                 ]
             }

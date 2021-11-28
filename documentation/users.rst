@@ -470,6 +470,7 @@ Recurso NOTIFICACIONES
         :comentador_comentario: Notificaciones de respuestas en los comentarios propios
         :notificacionplumatutorial_autor: Notificaciones de plumas en los tutoriales propios
         :notificacionplumacomunicado_comunicador: Notificaciones de plumas en los comunicados propios
+        :notificacionplumacomentario_comentador: Notificaciones de plumas en los comentarios proios
 
     * **Ejemplo de petición**
 
@@ -590,7 +591,20 @@ Recurso NOTIFICACIONES
                             },
                         "fecha_notificacion": "2021-11-28T15:57:54.544313Z"
                     }
+                ],
+                "notificacionplumacomentario_comentador": [
+                    {
+                        "tutorial": 5,
+                        "comentario": 4,
+                        "emplumador": {
+                                "id": 32,
+                                "username": "usuario",
+                                "foto_perfil": null
+                            },
+                        "fecha_notificacion": "2021-11-28T16:22:12.313457Z"
+                    }
                 ]
+
             }
 
             HTTP/1.1 400 BAD REQUEST

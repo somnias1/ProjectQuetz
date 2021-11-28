@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from ..models import Comunicado, User, NotificacionCreacionComunicado
+from ..models import (
+    Comunicado,
+    User,
+    NotificacionCreacionComunicado,
+    NotificacionPlumaComunicado,
+)
 from datetime import date
 
 from .basicinfo import UserBasicInfoSerializer, ComentarioComunicadoInfoSerializer
@@ -79,10 +84,30 @@ class ComunicadoPlumaSerializer(serializers.ModelSerializer):
         infocomunicado = Comunicado.objects.filter(id=data["comunicado"])[0]
         infouser = User.objects.filter(username=user)[0]
         infocomunicado.plumas_comunicados.add(infouser)
+        notificacion = NotificacionPlumaComunicado(
+            comunicador=infocomunicado.comunicador,
+            comunicado=infocomunicado,
+            emplumador=infouser,
+        )
+        notificacion.save()
+
         return infocomunicado
 
     def remove_feather(self, user, data):
         infocomunicado = Comunicado.objects.filter(id=data["comunicado"])[0]
         infouser = User.objects.filter(username=user)[0]
         infocomunicado.plumas_comunicados.remove(infouser)
+
         return infocomunicado
+
+
+class NotificacionPlumaComunicadoSerializer(serializers.ModelSerializer):
+    emplumador = UserBasicInfoSerializer(read_only=True)
+
+    class Meta:
+        model = NotificacionPlumaComunicado
+        fields = (
+            "comunicado",
+            "emplumador",
+            "fecha_notificacion",
+        )

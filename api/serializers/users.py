@@ -26,7 +26,10 @@ from .comments import (
 
 from .replies import NotificacionRespuestaSerializer
 
-from .announces import ComunicadoNotificacionCreacionSerializer
+from .announces import (
+    ComunicadoNotificacionCreacionSerializer,
+    NotificacionPlumaComunicadoSerializer,
+)
 
 from datetime import date, timedelta
 
@@ -171,6 +174,9 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
     notificacionplumatutorial_autor = NotificacionPlumaTutorialSerializer(
         read_only=True, many=True
     )
+    notificacionplumacomunicado_comunicador = NotificacionPlumaComunicadoSerializer(
+        read_only=True, many=True
+    )
 
     class Meta:
         model = User
@@ -182,4 +188,5 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
             "comunicador_comunicado_comentado",
             "comentador_comentario",
             "notificacionplumatutorial_autor",
+            "notificacionplumacomunicado_comunicador",
         )

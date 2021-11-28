@@ -1,7 +1,7 @@
 from .Greetings import Greeting
 from .users import User
 from .follows import UserFollowing
-from .tutorials import Tutorial, NotificacionCreacionTutorial
+from .tutorials import Tutorial, NotificacionCreacionTutorial, NotificacionPlumaTutorial
 from .steps import Paso
 from .comments import (
     Comentario,

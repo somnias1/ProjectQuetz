@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from ..models import Tutorial, Paso, User, NotificacionCreacionTutorial
+from ..models import (
+    Tutorial,
+    Paso,
+    User,
+    NotificacionCreacionTutorial,
+    NotificacionPlumaTutorial,
+)
 from .steps import PasoSerializer
 from datetime import date
 
@@ -115,6 +121,12 @@ class TutorialPlumaSerializer(serializers.ModelSerializer):
         infotutorial = Tutorial.objects.filter(id=data["tutorial"])[0]
         infouser = User.objects.filter(username=user)[0]
         infotutorial.plumas_tutoriales.add(infouser)
+
+        notificacion = NotificacionPlumaTutorial(
+            autor=infotutorial.autor, tutorial=infotutorial, emplumador=infouser
+        )
+        notificacion.save()
+
         return infotutorial
 
     def remove_feather(self, user, data):
@@ -122,3 +134,15 @@ class TutorialPlumaSerializer(serializers.ModelSerializer):
         infouser = User.objects.filter(username=user)[0]
         infotutorial.plumas_tutoriales.remove(infouser)
         return infotutorial
+
+
+class NotificacionPlumaTutorialSerializer(serializers.ModelSerializer):
+    emplumador = UserBasicInfoSerializer(read_only=True)
+
+    class Meta:
+        model = NotificacionPlumaTutorial
+        fields = (
+            "tutorial",
+            "emplumador",
+            "fecha_notificacion",
+        )

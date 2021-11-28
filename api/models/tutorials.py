@@ -54,3 +54,16 @@ class NotificacionCreacionTutorial(models.Model):
     usuario = models.ForeignKey("User", on_delete=models.CASCADE)
     tutorial = models.ForeignKey("Tutorial", on_delete=models.CASCADE)
     fecha_notificacion = models.DateTimeField(auto_now=True)
+
+
+class NotificacionPlumaTutorial(models.Model):
+    autor = models.ForeignKey(
+        "User", related_name="%(class)s_autor", on_delete=models.CASCADE
+    )
+    tutorial = models.ForeignKey(
+        "Tutorial", related_name="%(class)s_tutorial", on_delete=models.CASCADE
+    )
+    emplumador = models.ForeignKey(
+        "User", related_name="%(class)s_emplumador", on_delete=models.CASCADE
+    )
+    fecha_notificacion = models.DateTimeField(auto_now=True)

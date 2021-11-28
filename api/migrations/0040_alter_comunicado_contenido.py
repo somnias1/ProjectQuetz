@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0039_remove_comentariocomunicado_plumas_comentarios_comunicados'),
+        ("api", "0039_remove_comentariocomunicado_plumas_comentarios_comunicados"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='comunicado',
-            name='contenido',
-            field=models.CharField(max_length=255, verbose_name='Contenido del comunicado'),
+            model_name="comunicado",
+            name="contenido",
+            field=models.CharField(
+                max_length=255, verbose_name="Contenido del comunicado"
+            ),
         ),
     ]

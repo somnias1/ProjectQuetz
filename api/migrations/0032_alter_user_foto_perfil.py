@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0031_alter_user_foto_perfil'),
+        ("api", "0031_alter_user_foto_perfil"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='foto_perfil',
-            field=models.ImageField(blank=True, default='shorturl.at/gkxT5', null=True, upload_to='users'),
+            model_name="user",
+            name="foto_perfil",
+            field=models.ImageField(
+                blank=True, default="shorturl.at/gkxT5", null=True, upload_to="users"
+            ),
         ),
     ]

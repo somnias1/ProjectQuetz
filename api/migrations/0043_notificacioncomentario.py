@@ -8,17 +8,39 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0042_auto_20211125_2033'),
+        ("api", "0042_auto_20211125_2033"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='NotificacionComentario',
+            name="NotificacionComentario",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fecha_notificacion', models.DateTimeField(auto_now=True)),
-                ('autor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='autor_tutorial_comentado', to=settings.AUTH_USER_MODEL)),
-                ('comentario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacion_comentario', to='api.comentario')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fecha_notificacion", models.DateTimeField(auto_now=True)),
+                (
+                    "autor",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="autor_tutorial_comentado",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "comentario",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacion_comentario",
+                        to="api.comentario",
+                    ),
+                ),
             ],
         ),
     ]

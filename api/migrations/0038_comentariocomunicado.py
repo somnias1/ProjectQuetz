@@ -8,23 +8,54 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0037_comunicado_plumas_comunicados'),
+        ("api", "0037_comunicado_plumas_comunicados"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ComentarioComunicado',
+            name="ComentarioComunicado",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fecha_comentario', models.DateField(auto_now=True)),
-                ('texto_comentario', models.TextField(help_text='Qué tal te ha parecido éste tutorial?', verbose_name='Comentario')),
-                ('comentador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comentariocomunicado_Usuario', to=settings.AUTH_USER_MODEL)),
-                ('comunicado_padre', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comentariocomunicado_Comunicado', to='api.comunicado')),
-                ('plumas_comentarios_comunicados', models.ManyToManyField(to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fecha_comentario", models.DateField(auto_now=True)),
+                (
+                    "texto_comentario",
+                    models.TextField(
+                        help_text="Qué tal te ha parecido éste tutorial?",
+                        verbose_name="Comentario",
+                    ),
+                ),
+                (
+                    "comentador",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comentariocomunicado_Usuario",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "comunicado_padre",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comentariocomunicado_Comunicado",
+                        to="api.comunicado",
+                    ),
+                ),
+                (
+                    "plumas_comentarios_comunicados",
+                    models.ManyToManyField(to=settings.AUTH_USER_MODEL),
+                ),
             ],
             options={
-                'verbose_name': 'Comentario de comunicado',
-                'verbose_name_plural': 'Comentarios de comunicados',
+                "verbose_name": "Comentario de comunicado",
+                "verbose_name_plural": "Comentarios de comunicados",
             },
         ),
     ]

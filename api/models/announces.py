@@ -30,6 +30,7 @@ class NotificacionCreacionComunicado(models.Model):
     comunicado = models.ForeignKey("Comunicado", on_delete=models.CASCADE)
     fecha_notificacion = models.DateTimeField(auto_now=True)
 
+
 class NotificacionPlumaComunicado(models.Model):
     comunicador = models.ForeignKey(
         "User", related_name="%(class)s_comunicador", on_delete=models.CASCADE

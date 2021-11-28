@@ -25,7 +25,7 @@ $ heroku local
 
 La aplicación debería estarse ejecutando en [localhost:5000](http://localhost:5000/).
 
-## Haciendo deploy a  Heroku
+## Haciendo deploy a Heroku
 
 ```sh
 $ heroku create

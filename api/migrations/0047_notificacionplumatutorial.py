@@ -8,18 +8,47 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0046_auto_20211126_2126'),
+        ("api", "0046_auto_20211126_2126"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='NotificacionPlumaTutorial',
+            name="NotificacionPlumaTutorial",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fecha_notificacion', models.DateTimeField(auto_now=True)),
-                ('autor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacionplumatutorial_autor', to=settings.AUTH_USER_MODEL)),
-                ('emplumador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacionplumatutorial_emplumador', to=settings.AUTH_USER_MODEL)),
-                ('tutorial', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacionplumatutorial_tutorial', to='api.tutorial')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fecha_notificacion", models.DateTimeField(auto_now=True)),
+                (
+                    "autor",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacionplumatutorial_autor",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "emplumador",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacionplumatutorial_emplumador",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "tutorial",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacionplumatutorial_tutorial",
+                        to="api.tutorial",
+                    ),
+                ),
             ],
         ),
     ]

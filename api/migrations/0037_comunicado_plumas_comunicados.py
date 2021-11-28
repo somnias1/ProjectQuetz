@@ -7,13 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0036_comunicado'),
+        ("api", "0036_comunicado"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='comunicado',
-            name='plumas_comunicados',
+            model_name="comunicado",
+            name="plumas_comunicados",
             field=models.ManyToManyField(to=settings.AUTH_USER_MODEL),
         ),
     ]

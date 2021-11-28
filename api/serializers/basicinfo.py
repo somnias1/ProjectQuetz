@@ -57,6 +57,7 @@ class ComentarioMinimalInfoSerializer(serializers.ModelSerializer):
             "comentador",
         )
 
+
 class RespuestaMinimalInfoSerializer(serializers.ModelSerializer):
     comentador_respuesta = UserBasicInfoSerializer(read_only=True)
 

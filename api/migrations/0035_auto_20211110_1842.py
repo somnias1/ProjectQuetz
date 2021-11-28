@@ -7,18 +7,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0034_delete_pluma'),
+        ("api", "0034_delete_pluma"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='comentario',
-            name='plumas_comentarios',
+            model_name="comentario",
+            name="plumas_comentarios",
             field=models.ManyToManyField(to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
-            model_name='tutorial',
-            name='plumas_tutoriales',
+            model_name="tutorial",
+            name="plumas_tutoriales",
             field=models.ManyToManyField(to=settings.AUTH_USER_MODEL),
         ),
     ]

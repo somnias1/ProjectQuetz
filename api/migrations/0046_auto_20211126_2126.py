@@ -8,24 +8,64 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0045_notificacioncomentariocomunicado'),
+        ("api", "0045_notificacioncomentariocomunicado"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='NotificacionRespuesta',
+            name="NotificacionRespuesta",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fecha_notificacion', models.DateTimeField(auto_now=True)),
-                ('comentador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comentador_comentario', to=settings.AUTH_USER_MODEL)),
-                ('comentario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comentario_respondido', to='api.comentario')),
-                ('respuesta', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacion_respuesta', to='api.respuesta')),
-                ('tutorial', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tutorial_comentado_respondido', to='api.tutorial')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fecha_notificacion", models.DateTimeField(auto_now=True)),
+                (
+                    "comentador",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comentador_comentario",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "comentario",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comentario_respondido",
+                        to="api.comentario",
+                    ),
+                ),
+                (
+                    "respuesta",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacion_respuesta",
+                        to="api.respuesta",
+                    ),
+                ),
+                (
+                    "tutorial",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="tutorial_comentado_respondido",
+                        to="api.tutorial",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='respuesta',
-            name='notificacion_reacion',
-            field=models.ManyToManyField(related_name='notificacion_creacion_respuesta', through='api.NotificacionRespuesta', to=settings.AUTH_USER_MODEL),
+            model_name="respuesta",
+            name="notificacion_reacion",
+            field=models.ManyToManyField(
+                related_name="notificacion_creacion_respuesta",
+                through="api.NotificacionRespuesta",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

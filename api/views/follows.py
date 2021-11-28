@@ -17,4 +17,3 @@ class UserFollowingViewSet(viewsets.ModelViewSet):
         context = super(UserFollowingViewSet, self).get_serializer_context()
         context.update({"request": self.request})
         return context
-

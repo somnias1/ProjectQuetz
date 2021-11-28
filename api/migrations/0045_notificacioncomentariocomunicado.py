@@ -8,18 +8,47 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0044_notificacioncomentario_tutorial'),
+        ("api", "0044_notificacioncomentario_tutorial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='NotificacionComentarioComunicado',
+            name="NotificacionComentarioComunicado",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fecha_notificacion', models.DateTimeField(auto_now=True)),
-                ('comentario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacion_comentario', to='api.comentariocomunicado')),
-                ('comunicado', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comunicado_comentado', to='api.comunicado')),
-                ('comunicador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comunicador_comunicado_comentado', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fecha_notificacion", models.DateTimeField(auto_now=True)),
+                (
+                    "comentario",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacion_comentario",
+                        to="api.comentariocomunicado",
+                    ),
+                ),
+                (
+                    "comunicado",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comunicado_comentado",
+                        to="api.comunicado",
+                    ),
+                ),
+                (
+                    "comunicador",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comunicador_comunicado_comentado",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

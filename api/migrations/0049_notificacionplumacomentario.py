@@ -8,18 +8,47 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0048_notificacionplumacomunicado'),
+        ("api", "0048_notificacionplumacomunicado"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='NotificacionPlumaComentario',
+            name="NotificacionPlumaComentario",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('fecha_notificacion', models.DateTimeField(auto_now=True)),
-                ('comentador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacionplumacomentario_comentador', to=settings.AUTH_USER_MODEL)),
-                ('comunicado', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacionplumacomentario_comentario', to='api.comentario')),
-                ('emplumador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notificacionplumacomentario_emplumador', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("fecha_notificacion", models.DateTimeField(auto_now=True)),
+                (
+                    "comentador",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacionplumacomentario_comentador",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "comunicado",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacionplumacomentario_comentario",
+                        to="api.comentario",
+                    ),
+                ),
+                (
+                    "emplumador",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notificacionplumacomentario_emplumador",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

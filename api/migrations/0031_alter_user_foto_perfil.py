@@ -6,13 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0030_alter_user_foto_perfil'),
+        ("api", "0030_alter_user_foto_perfil"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='foto_perfil',
-            field=models.ImageField(blank=True, default='https://quetz.s3.us-east-2.amazonaws.com/users/basic.png?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLWVhc3QtMSJHMEUCIESH4E8Q6HVGHAlpIsR%2FtHrDDFP7qyXzjmr0rMd7vMU8AiEAuC%2F8zRMLZVz2WUSCIQVwT41G2278ibWePbKJ5pmv2jQqlgMI9v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwzNjc0MjE4OTkyOTkiDA3F0zI4e3xh%2FJOFQirqAnmuIFFMYAYd%2FHxc7M4tr%2FkqE3OAsVuOGjuUPaau8mwPvi%2FkuuZpGh%2F7U9JETvWCnQM8VQTVm%2Bn3ZDGKKucIkb2RoHhCG7RKw9h%2BWnBqasUWuXHNaC11J942xxPv%2BwVsneOdgcMF8Nxn67zzQKeBPY3VHvXktPCL6IgpM%2Fyoh6La%2Fp4FHsPTyTr3Hn58RBe%2BnJfmn2dGsPM7drirrKmGFjevj0z8OFpWS6%2BfUqFxTfYRXd3aOWEDiGBFdyoA0T3Rc6DTUbTurf7MR3N21AhI60tsyAUbVe%2FtLWkyuF6uG91PKMCIj30JZEziA13j3fuG8zE6nRxDA9owUFflLSUJJdW8%2BQAUVOi0DivLipp%2FiTSFEK0r9Dpxg8IGMUHeD%2FUDe6KL%2F3p5Z%2Bze4J9uQQ%2BifxGM5ZczQi%2BcTOeIEv83k9%2Frmsq3V1MNgMr%2B0aHzY3WHODuGPoxDB0%2Fd6YOxsormoD65BCnJEe0ZfRw5MJOH%2FIsGOrMC%2FXIjFS8bfEQhideoeTOfc8v3SaLPHMumalGbVUHr89HQViNCebjXlP8azcxfcugcjCEoG4Mm8Npgm5UtwAHTT6HR08ooNgQtP0cNaBixFgdKBqCTTs8GO7gPxvAX%2FzGI9R3SHQ0dhxBmtTnSgPMXGDX7QgT3pS5tZgRz35FjEgBinfcR9dOaJZ%2FG94hDd%2Bd89fAXQGR%2F48NU%2FJjEkwZolC7%2Ft2ERMZImsPfI8kXyA5Ee3rAQDgLqEoTVdHUhYUDFHaBDA6WXFm7cniqgqsn2EGuUFm2PSKovWAoVSUMWCrhwsEwvPVJx3eY%2FiYaWTEaMW4UlL3IVvxQmU%2FYUdj4toaUZ85kCwshUgwljiqLTaLvGBPwpgppuMPkWnPkm5RZ67gkL8JA71Xk0r4B9UVBGfx2g8w%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20211031T210143Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAVLDANIIRZNIRM3WJ%2F20211031%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=8791cde24a243890973319720a9b4cb507be44dbcc0ac30d9e15d6654bef5cf8', null=True, upload_to='users'),
+            model_name="user",
+            name="foto_perfil",
+            field=models.ImageField(
+                blank=True,
+                default="https://quetz.s3.us-east-2.amazonaws.com/users/basic.png?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEF0aCXVzLWVhc3QtMSJHMEUCIESH4E8Q6HVGHAlpIsR%2FtHrDDFP7qyXzjmr0rMd7vMU8AiEAuC%2F8zRMLZVz2WUSCIQVwT41G2278ibWePbKJ5pmv2jQqlgMI9v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwzNjc0MjE4OTkyOTkiDA3F0zI4e3xh%2FJOFQirqAnmuIFFMYAYd%2FHxc7M4tr%2FkqE3OAsVuOGjuUPaau8mwPvi%2FkuuZpGh%2F7U9JETvWCnQM8VQTVm%2Bn3ZDGKKucIkb2RoHhCG7RKw9h%2BWnBqasUWuXHNaC11J942xxPv%2BwVsneOdgcMF8Nxn67zzQKeBPY3VHvXktPCL6IgpM%2Fyoh6La%2Fp4FHsPTyTr3Hn58RBe%2BnJfmn2dGsPM7drirrKmGFjevj0z8OFpWS6%2BfUqFxTfYRXd3aOWEDiGBFdyoA0T3Rc6DTUbTurf7MR3N21AhI60tsyAUbVe%2FtLWkyuF6uG91PKMCIj30JZEziA13j3fuG8zE6nRxDA9owUFflLSUJJdW8%2BQAUVOi0DivLipp%2FiTSFEK0r9Dpxg8IGMUHeD%2FUDe6KL%2F3p5Z%2Bze4J9uQQ%2BifxGM5ZczQi%2BcTOeIEv83k9%2Frmsq3V1MNgMr%2B0aHzY3WHODuGPoxDB0%2Fd6YOxsormoD65BCnJEe0ZfRw5MJOH%2FIsGOrMC%2FXIjFS8bfEQhideoeTOfc8v3SaLPHMumalGbVUHr89HQViNCebjXlP8azcxfcugcjCEoG4Mm8Npgm5UtwAHTT6HR08ooNgQtP0cNaBixFgdKBqCTTs8GO7gPxvAX%2FzGI9R3SHQ0dhxBmtTnSgPMXGDX7QgT3pS5tZgRz35FjEgBinfcR9dOaJZ%2FG94hDd%2Bd89fAXQGR%2F48NU%2FJjEkwZolC7%2Ft2ERMZImsPfI8kXyA5Ee3rAQDgLqEoTVdHUhYUDFHaBDA6WXFm7cniqgqsn2EGuUFm2PSKovWAoVSUMWCrhwsEwvPVJx3eY%2FiYaWTEaMW4UlL3IVvxQmU%2FYUdj4toaUZ85kCwshUgwljiqLTaLvGBPwpgppuMPkWnPkm5RZ67gkL8JA71Xk0r4B9UVBGfx2g8w%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20211031T210143Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAVLDANIIRZNIRM3WJ%2F20211031%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=8791cde24a243890973319720a9b4cb507be44dbcc0ac30d9e15d6654bef5cf8",
+                null=True,
+                upload_to="users",
+            ),
         ),
     ]

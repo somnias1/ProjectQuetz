@@ -566,6 +566,17 @@ Recurso NOTIFICACIONES
                         },
                         "fecha_notificacion": "2021-11-26T21:53:01.946795Z"
                     }
+                ],
+                "notificacionplumatutorial_autor": [
+                    {
+                        "tutorial": 1,
+                        "emplumador": {
+                                "id": 32,
+                                "username": "usuario",
+                                "foto_perfil": null
+                            },
+                        "fecha_notificacion": "2021-11-28T15:29:22.436254Z"
+                    }
                 ]
             }
 

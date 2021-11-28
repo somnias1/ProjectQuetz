@@ -1,21 +1,21 @@
-# Python: Getting Started
+# Django: Quetz
 
-A barebones Django app, which can easily be deployed to Heroku.
+Un sistema de foros basado en Django, preparado para el deploy en Heroku y uso de S3 para el alojamiento de imágenes
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+Esta aplicación es compatible con el artículo [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python)
 
-## Running Locally
+## Corriendo de manera local
 
-Make sure you have Python 3.9 [installed locally](https://docs.python-guide.org/starting/installation/). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+Asegurarse de tener Python 3.9 [instalado localmente](https://docs.python-guide.org/starting/installation/). Para hacer push a Heroku, se hace uso de la [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), así como [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
+$ git clone https://github.com/somnias1/ProjectQuetz.git
+$ cd ProjectQuetz
 
-$ python3 -m venv getting-started
+$ python3 -m venv env-Quetz
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
+$ createdb quetz
 
 $ python manage.py migrate
 $ python manage.py collectstatic
@@ -23,9 +23,9 @@ $ python manage.py collectstatic
 $ heroku local
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+La aplicación debería estarse ejecutando en [localhost:5000](http://localhost:5000/).
 
-## Deploying to Heroku
+## Haciendo deploy a  Heroku
 
 ```sh
 $ heroku create
@@ -34,12 +34,12 @@ $ git push heroku main
 $ heroku run python manage.py migrate
 $ heroku open
 ```
-or
+También se puede hacer uso de la guía
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## Documentation
+## Documentación
 
-For more information about using Python on Heroku, see these Dev Center articles:
+Para más información sobre el uso de Python en Heroku, se pueden revisar los artículos en el Dev Center:
 
 - [Python on Heroku](https://devcenter.heroku.com/categories/python)

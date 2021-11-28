@@ -5,12 +5,14 @@ from ..models import (
     ComentarioComunicado,
     NotificacionComentario,
     NotificacionComentarioComunicado,
+    NotificacionPlumaComentario,
 )
 from datetime import date
 
 from .basicinfo import (
     ComentarioMinimalInfoSerializer,
     ComentarioComunicadoMinimalInfoSerializer,
+    UserBasicInfoSerializer,
 )
 
 # from .tutorials import TutorialMinimalInfoSerializer
@@ -69,7 +71,29 @@ class ComentarioPlumaSerializer(serializers.ModelSerializer):
         infocomentario = Comentario.objects.filter(id=data["comentario"])[0]
         infouser = User.objects.filter(username=user)[0]
         infocomentario.plumas_comentarios.add(infouser)
+
+        notificacion = NotificacionPlumaComentario(
+            comentador=infocomentario.comentador,
+            comentario=infocomentario,
+            emplumador=infouser,
+        )
+        notificacion.save()
+
         return infocomentario
+
+
+class NotificacionPlumaComentarioSerializer(serializers.ModelSerializer):
+    emplumador = UserBasicInfoSerializer(read_only=True)
+    tutorial = serializers.ReadOnlyField(source="comentario.tutorial_padre.id")
+
+    class Meta:
+        model = NotificacionPlumaComentario
+        fields = (
+            "tutorial",
+            "comentario",
+            "emplumador",
+            "fecha_notificacion",
+        )
 
     def remove_feather(self, user, data):
         infocomentario = Comentario.objects.filter(id=data["comentario"])[0]

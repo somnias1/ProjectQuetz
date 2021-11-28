@@ -43,6 +43,19 @@ class NotificacionComentario(models.Model):
     fecha_notificacion = models.DateTimeField(auto_now=True)
 
 
+class NotificacionPlumaComentario(models.Model):
+    comentador = models.ForeignKey(
+        "User", related_name="%(class)s_comentador", on_delete=models.CASCADE
+    )
+    comentario = models.ForeignKey(
+        "Comentario", related_name="%(class)s_comentario", on_delete=models.CASCADE
+    )
+    emplumador = models.ForeignKey(
+        "User", related_name="%(class)s_emplumador", on_delete=models.CASCADE
+    )
+    fecha_notificacion = models.DateTimeField(auto_now=True)
+
+
 class ComentarioComunicado(models.Model):
 
     comunicado_padre = models.ForeignKey(

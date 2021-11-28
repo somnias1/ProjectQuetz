@@ -22,6 +22,7 @@ from .tutorials import (
 from .comments import (
     NotificacionComentarioSerializer,
     NotificacionComentarioComunicadoSerializer,
+    NotificacionPlumaComentarioSerializer,
 )
 
 from .replies import NotificacionRespuestaSerializer
@@ -177,6 +178,9 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
     notificacionplumacomunicado_comunicador = NotificacionPlumaComunicadoSerializer(
         read_only=True, many=True
     )
+    notificacionplumacomentario_comentador = NotificacionPlumaComentarioSerializer(
+        read_only=True, many=True
+    )
 
     class Meta:
         model = User
@@ -189,4 +193,5 @@ class UserNotificacionSerializer(serializers.ModelSerializer):
             "comentador_comentario",
             "notificacionplumatutorial_autor",
             "notificacionplumacomunicado_comunicador",
+            "notificacionplumacomentario_comentador",
         )

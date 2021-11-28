@@ -8,6 +8,7 @@ from .comments import (
     ComentarioComunicado,
     NotificacionComentario,
     NotificacionComentarioComunicado,
+    NotificacionPlumaComentario,
 )
 from .replies import Respuesta, NotificacionRespuesta
 from .announces import (

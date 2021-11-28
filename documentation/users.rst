@@ -468,6 +468,8 @@ Recurso NOTIFICACIONES
         :autor_tutorial_comentado: Notificaciones de comentarios en los tutoriales propios
         :comunicador_comunicado_comentado: Notificaciones de comentarios en los comunicados propios
         :comentador_comentario: Notificaciones de respuestas en los comentarios propios
+        :notificacionplumatutorial_autor: Notificaciones de plumas en los tutoriales propios
+        :notificacionplumacomunicado_comunicador: Notificaciones de plumas en los comunicados propios
 
     * **Ejemplo de petición**
 
@@ -576,6 +578,17 @@ Recurso NOTIFICACIONES
                                 "foto_perfil": null
                             },
                         "fecha_notificacion": "2021-11-28T15:29:22.436254Z"
+                    }
+                ],
+                "notificacionplumacomunicado_comunicador": [
+                    {
+                        "comunicado": 1,
+                        "emplumador": {
+                                "id": 32,
+                                "username": "usuario",
+                                "foto_perfil": null
+                            },
+                        "fecha_notificacion": "2021-11-28T15:57:54.544313Z"
                     }
                 ]
             }

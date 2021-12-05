@@ -35,7 +35,7 @@ class ComunicadoViewSet(GetSerializerClassMixin, viewsets.ModelViewSet):
         following = user.following.values_list("following_user_id", flat=True)
         # comms = Comunicado.objects.filter(comunicador__in=following)
         # print(following, comms)
-        queryset = Comunicado.objects.filter(comunicador__in=following)
+        queryset = Comunicado.objects.filter(comunicador__in=following).order_by("-id")
         return queryset
 
     def get_serializer_context(self):

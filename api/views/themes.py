@@ -9,4 +9,4 @@ from ..models import Tema
 class TemaViewSet(viewsets.ModelViewSet):
     serializer_class = TemaSerializer
     permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
-    queryset = Tema.objects.all()
+    queryset = Tema.objects.all().order_by("categoria_tema", "nombre_tema")

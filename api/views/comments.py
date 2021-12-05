@@ -21,7 +21,7 @@ from .mixins import GetSerializerClassMixin
 
 
 class ComentarioViewSet(GetSerializerClassMixin, viewsets.ModelViewSet):
-    queryset = Comentario.objects.all()
+    queryset = Comentario.objects.all().order_by("-id")
     serializer_class = ComentarioSerializer
     permission_classes = [IsAuthenticated, IsCommentOwner]
     serializer_action_classes = {

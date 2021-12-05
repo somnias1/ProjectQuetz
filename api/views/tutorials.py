@@ -23,7 +23,7 @@ from .mixins import GetSerializerClassMixin
 
 
 class TutorialViewSet(GetSerializerClassMixin, viewsets.ModelViewSet):
-    queryset = Tutorial.objects.all()
+    queryset = Tutorial.objects.all().order_by("-id")
     serializer_class = TutorialDetailSerializer
     permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
 

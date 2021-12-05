@@ -19,7 +19,7 @@ from .mixins import GetSerializerClassMixin
 
 
 class RespuestaViewSet(GetSerializerClassMixin, viewsets.ModelViewSet):
-    queryset = Respuesta.objects.all()
+    queryset = Respuesta.objects.all().order_by("-id")
     serializer_class = RespuestaSerializer
     permission_classes = [IsAuthenticated, IsReplyOwner]
     serializer_action_classes = {

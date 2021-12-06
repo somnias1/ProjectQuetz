@@ -46,6 +46,7 @@ Recurso LOGIN
                         "facebookurl": null,
                         "twitterurl": null,
                         "youtubeurl": null,
+                        "instagramurl": null,
                         "adulto": false,
                         "foto_perfil": null,
                         "following": [],
@@ -113,6 +114,7 @@ Recurso SIGNUP
                     "facebookurl": null,
                     "twitterurl": null,
                     "youtubeurl": null,
+                    "instagramurl": null,
                     "adulto": true,
                     "foto_perfil": null,
                     "following": [],
@@ -170,6 +172,7 @@ Recurso WATCH
                 "ubicacion": null,
                 "facebookurl": null,
                 "twitterurl": null,
+                "instagramurl": null,
                 "youtubeurl": null,
                 "adulto": true,
                 "foto_perfil": null,
@@ -212,6 +215,7 @@ Recurso WATCH
                 "facebookurl": null,
                 "twitterurl": null,
                 "youtubeurl": null,
+                "instagramurl": null,
                 "adulto": true,
                 "foto_perfil": null,
                 "following": [],
@@ -274,6 +278,7 @@ Recurso PROFILE
                 "facebookurl": null,
                 "twitterurl": null,
                 "youtubeurl": null,
+                "instagramurl": null,
                 "adulto": true,
                 "foto_perfil": null,
                 "following": [
@@ -331,6 +336,16 @@ Recurso PROFILEUPDATE
         :youtubeurl: **(string)** URL del perfil de YouTube del usuario
         :instagramurl: **(string)** URL del perfil de Instagram del usuario
         :foto_perfil: **(file)** Foto de perfil del usuario
+
+    * **Idiomas disponibles**
+        ("en", "Inglés"),
+        ("es", "Español"),
+        ("fr", "Francés"),
+        ("de", "Alemán"),
+        ("cn", "Chino"),
+        ("jp", "Japonés"),
+        ("it", "Italiano"),
+        ("pt", "Portugués"),
 
 
     * **Ejemplo de petición**

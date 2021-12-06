@@ -29,7 +29,6 @@ class User(AbstractUser):
         blank=True,
         choices=lista_idiomas,
         max_choices=len(lista_idiomas),
-        max_length=len(lista_idiomas),
     )
     ubicacion = models.CharField(null=True, blank=True, max_length=255)
     facebookurl = models.URLField("Enlace a Facebook", null=True, blank=True)

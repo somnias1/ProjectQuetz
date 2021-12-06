@@ -338,14 +338,14 @@ Recurso PROFILEUPDATE
         :foto_perfil: **(file)** Foto de perfil del usuario
 
     * **Idiomas disponibles**
-        ("en", "Inglés"),
-        ("es", "Español"),
-        ("fr", "Francés"),
-        ("de", "Alemán"),
-        ("cn", "Chino"),
-        ("jp", "Japonés"),
-        ("it", "Italiano"),
-        ("pt", "Portugués"),
+        :en: Inglés
+        :es: "Español
+        :fr: "Francés
+        :de: "Alemán
+        :cn: "Chino
+        :jp: "Japonés
+        :it: "Italiano
+        :pt: "Portugués
 
 
     * **Ejemplo de petición**

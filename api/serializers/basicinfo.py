@@ -30,6 +30,7 @@ class TutorialBasicInfoSerializer(serializers.ModelSerializer):
             "descripcion",
             "nivel",
             "sensible",
+            "plumas_tutoriales",
             "fecha_creacion",
         )
 

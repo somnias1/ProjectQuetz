@@ -302,6 +302,7 @@ Recurso PROFILE
                         "titulo": "Cosas",
                         "banner": "/media/tutorials/Quetz2_uCfjJL9.png",
                         "descripcion": "Cosas que se hacen",
+                        "plumas_tutoriales": [1,2,3],
                         "nivel": "bas",
                         "sensible": false,
                         "fecha_creacion": "2021-10-19"

@@ -257,6 +257,7 @@ Recurso GET
             Content-Type: json
 
             {
+                "id": 1,
                 "autor": {
                         "id": 3,
                         "username": "Quetz",

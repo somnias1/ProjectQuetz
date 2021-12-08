@@ -95,6 +95,7 @@ class TutorialRetrieveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tutorial
         fields = (
+            "id",
             "autor",
             "titulo",
             "banner",

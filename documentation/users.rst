@@ -204,6 +204,7 @@ Recurso WATCH
             Content-Type: json
 
             {
+                "id": 1,
                 "username": "usuarioreal",
                 "last_login": "2021-09-18",
                 "email": "usuarioreal@realidad.com",
@@ -267,6 +268,7 @@ Recurso PROFILE
             Content-Type: json
 
             {
+                "id": 1,
                 "username": "usuarioreal",
                 "last_login": "2021-09-18",
                 "email": "usuarioreal@realidad.com",
